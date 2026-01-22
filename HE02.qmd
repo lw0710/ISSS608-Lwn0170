@@ -15,17 +15,21 @@ execute:
 This is Hands-on Exercise 2 about ggplot2 extensions for improved .
 
 # Getting started
+
 ```{r}
 pacman::p_load(ggrepel, patchwork, 
                ggthemes, hrbrthemes,
                tidyverse)
 ```
+
 ## Importing Data
+
 ```{r}
 exam_data <- read_csv("C:/Users/jiayi/Documents/SMU/26 Jan Term/ISSS608_Visual_Analytics_and_Applications/ISSS608_Lwn0170/data/Exam_data.csv")
 ```
 
 # Visualization
+
 ```{r}
 #2.3
 ggplot(data=exam_data, 
@@ -41,6 +45,7 @@ ggplot(data=exam_data,
                   ylim=c(0,100)) +
   ggtitle("English scores versus Maths scores for Primary 3")
 ```
+
 ```{r}
 #2.3.1
 ggplot(data=exam_data, 
@@ -55,6 +60,7 @@ ggplot(data=exam_data,
                   ylim=c(0,100)) +
   ggtitle("English scores versus Maths scores for Primary 3")
 ```
+
 ```{r}
 #2.4
 ggplot(data=exam_data, 
@@ -66,6 +72,7 @@ ggplot(data=exam_data,
   theme_gray() +
   ggtitle("Distribution of Maths scores") 
 ```
+
 ```{r}
 #2.4.1
 ggplot(data=exam_data, 
@@ -77,6 +84,7 @@ ggplot(data=exam_data,
   ggtitle("Distribution of Maths scores") +
   theme_economist()
 ```
+
 ```{r}
 #2.4.2
 ggplot(data=exam_data, 
@@ -88,6 +96,7 @@ ggplot(data=exam_data,
   ggtitle("Distribution of Maths scores") +
   theme_ipsum(base_family = "sans")
 ```
+
 ```{r}
 ggplot(data=exam_data, 
              aes(x = MATHS)) +
@@ -101,6 +110,7 @@ ggplot(data=exam_data,
               grid = "Y",
               base_family = "sans")
 ```
+
 ```{r}
 #2.5
 p1 <- ggplot(data=exam_data, 
@@ -113,6 +123,7 @@ p1 <- ggplot(data=exam_data,
   ggtitle("Distribution of Maths scores")
 p1
 ```
+
 ```{r}
 p2 <- ggplot(data=exam_data, 
              aes(x = ENGLISH)) +
@@ -124,6 +135,7 @@ p2 <- ggplot(data=exam_data,
   ggtitle("Distribution of English scores")
 p2
 ```
+
 ```{r}
 p3 <- ggplot(data=exam_data, 
              aes(x= MATHS, 
@@ -136,16 +148,20 @@ p3 <- ggplot(data=exam_data,
   ggtitle("English scores versus Maths scores for Primary 3")
 p3
 ```
+
 ```{r}
 p1+p2
 ```
+
 ```{r}
 (p1 / p2) | p3
 ```
+
 ```{r}
 ((p1 / p2) | p3) + 
   plot_annotation(tag_levels = 'I')
 ```
+
 ```{r}
 p3 + inset_element(p2, 
                    left = 0.02, 
@@ -153,6 +169,7 @@ p3 + inset_element(p2,
                    right = 0.5, 
                    top = 1)
 ```
+
 ```{r}
 patchwork <- (p1 / p2) | p3
 patchwork & theme_economist()

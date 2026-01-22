@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "ISSS608 Lwn0170",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   },
   {
     "objectID": "about.html",
@@ -18,7 +18,7 @@
     "href": "HE01.html",
     "title": "Hands-on Exercise 1",
     "section": "",
-    "text": "This is my first attempt to create the coursework website.\n\n\n\npacman::p_load(tidyverse)"
+    "text": "Overview\nThis is my first attempt to create the coursework website.\n\n\nGetting started\n\npacman::p_load(tidyverse)\n\n\n\nThe Data\n\nexam_data &lt;- read_csv(\"C:/Users/jiayi/Documents/SMU/26 Jan Term/ISSS608_Visual_Analytics_and_Applications/ISSS608_Lwn0170/data/Exam_data.csv\")\n\n\n\nFirst Visualization\n\n#1.7.1\nggplot(data = exam_data,\n       aes(x = RACE)) +\n  geom_bar()  \n\n\n\n\n\n\n\n#1.7.2\nggplot(data=exam_data, \n       aes(x = MATHS)) +\n  geom_dotplot(dotsize = 0.5)\n\n\n\n\n\n\n\nggplot(data=exam_data, \n       aes(x = MATHS)) +\n  geom_dotplot(binwidth=2.5,         \n               dotsize = 0.5) +      \n  scale_y_continuous(NULL,           \n                     breaks = NULL)  \n\n\n\n\n\n\n\n#1.7.3#\nggplot(data=exam_data, \n       aes(x = MATHS)) +\n  geom_histogram() \n\n\n\n\n\n\n\n#1.7.4#\nggplot(data=exam_data, \n       aes(x= MATHS)) +\n  geom_histogram(bins=20,            \n                 color=\"black\",      \n                 fill=\"light blue\")  \n\n\n\n\n\n\n\n#1.7.5\nggplot(data=exam_data, \n       aes(x= MATHS, \n           fill = GENDER)) +\n  geom_histogram(bins=20, \n                 color=\"grey30\")\n\n\n\n\n\n\n\n#1.7.6\nggplot(data=exam_data, \n       aes(x = MATHS)) +\n  geom_density()           \n\n\n\n\n\n\n\nggplot(data=exam_data, \n       aes(x = MATHS, \n           colour = GENDER)) +\n  geom_density()\n\n\n\n\n\n\n\n#1.7.7\nggplot(data=exam_data, \n       aes(y = MATHS,       \n           x= GENDER)) +    \n  geom_boxplot()            \n\n\n\n\n\n\n\nggplot(data=exam_data, \n       aes(y = MATHS, \n           x= GENDER)) +\n  geom_boxplot(notch=TRUE)\n\n\n\n\n\n\n\n#1.7.8\nggplot(data=exam_data, \n       aes(y = MATHS, \n           x= GENDER)) +\n  geom_violin()\n\n\n\n\n\n\n\n#1.7.9\nggplot(data=exam_data, \n       aes(x= MATHS, \n           y=ENGLISH)) +\n  geom_point()            \n\n\n\n\n\n\n\n#1.7.10\nggplot(data=exam_data, \n       aes(y = MATHS, \n           x= GENDER)) +\n  geom_boxplot() +                    \n  geom_point(position=\"jitter\", \n             size = 0.5)        \n\n\n\n\n\n\n\n#1.8.1\nggplot(data=exam_data, \n       aes(y = MATHS, x= GENDER)) +\n  geom_boxplot()\n\n\n\n\n\n\n\n#1.8.2\nggplot(data=exam_data, \n       aes(y = MATHS, x= GENDER)) +\n  geom_boxplot() +\n  stat_summary(geom = \"point\",       \n               fun = \"mean\",         \n               colour =\"red\",        \n               size=4)               \n\n\n\n\n\n\n\n#1.8.3\nggplot(data=exam_data, \n       aes(y = MATHS, x= GENDER)) +\n  geom_boxplot() +\n  geom_point(stat=\"summary\",        \n             fun=\"mean\",           \n             colour=\"red\",          \n             size=4)                    \n\n\n\n\n\n\n\n#1.8.4\nggplot(data=exam_data, \n       aes(x= MATHS, y=ENGLISH)) +\n  geom_point() +\n  geom_smooth(size=0.5)\n\n\n\n\n\n\n\nggplot(data=exam_data, \n       aes(x= MATHS, \n           y=ENGLISH)) +\n  geom_point() +\n  geom_smooth(method=lm, \n              linewidth=0.5)\n\n\n\n\n\n\n\n#1.9.1\nggplot(data=exam_data, \n       aes(x= MATHS)) +\n  geom_histogram(bins=20) +\n  facet_wrap(~ CLASS)\n\n\n\n\n\n\n\n#1.9.2\nggplot(data=exam_data, \n       aes(x= MATHS)) +\n  geom_histogram(bins=20) +\n  facet_grid(~ CLASS)\n\n\n\n\n\n\n\n#1.10.1\nggplot(data=exam_data, \n       aes(x=RACE)) +\n  geom_bar() +\n  coord_flip()\n\n\n\n\n\n\n\n#1.10.2\nggplot(data=exam_data, \n       aes(x= MATHS, y=ENGLISH)) +\n  geom_point() +\n  geom_smooth(method=lm, \n              size=0.5) +  \n  coord_cartesian(xlim=c(0,100),\n                  ylim=c(0,100))\n\n\n\n\n\n\n\n#1.11.1\nggplot(data=exam_data, \n       aes(x=RACE)) +\n  geom_bar() +\n  coord_flip() +\n  theme_classic()\n\n\n\n\n\n\n\nggplot(data=exam_data, \n       aes(x=RACE)) +\n  geom_bar() +\n  coord_flip() +\n  theme_minimal()"
   },
   {
     "objectID": "HE01.html#getting-started",
@@ -26,5 +26,19 @@
     "title": "Hands-on Exercise 1",
     "section": "",
     "text": "pacman::p_load(tidyverse)"
+  },
+  {
+    "objectID": "HE02.html",
+    "href": "HE02.html",
+    "title": "Hands-on Exercise 2",
+    "section": "",
+    "text": "This is Hands-on Exercise 2 about ggplot2 extensions for improved ."
+  },
+  {
+    "objectID": "HE02.html#importing-data",
+    "href": "HE02.html#importing-data",
+    "title": "Hands-on Exercise 2",
+    "section": "Importing Data",
+    "text": "Importing Data\n\nexam_data &lt;- read_csv(\"C:/Users/jiayi/Documents/SMU/26 Jan Term/ISSS608_Visual_Analytics_and_Applications/ISSS608_Lwn0170/data/Exam_data.csv\")"
   }
 ]

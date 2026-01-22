@@ -14,7 +14,7 @@ execute:
 
 This is my first attempt to create the coursework website.
 
-## Getting started
+# Getting started
 
 ```{r}
 pacman::p_load(tidyverse)
@@ -23,7 +23,7 @@ pacman::p_load(tidyverse)
 # The Data
 
 ```{r}
-exam_data <- read_csv("C:/Users/jiayi/Documents/SMU/26 Jan Term/ISSS608 Visual Analytics and Applications/17.1.26/data/Exam_data.csv")
+exam_data <- read_csv("C:/Users/jiayi/Documents/SMU/26 Jan Term/ISSS608_Visual_Analytics_and_Applications/ISSS608_Lwn0170/data/Exam_data.csv")
 ```
 
 # First Visualization

@@ -12,7 +12,7 @@ execute:
 
 # Overview
 
-This is Hands-on Exercise 2 about ggplot2 extensions for improved .
+This is Hands-on Exercise 2 about ggplot2 extensions for improved.
 
 # Getting started
 

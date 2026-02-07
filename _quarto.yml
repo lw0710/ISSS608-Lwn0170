@@ -4,6 +4,8 @@ project:
 website:
   title: "ISSS608-coursework website"
   navbar:
+    background: primary
+    foreground: dark
     left: 
       - text: "Hands-on Exercise"
         menu: 

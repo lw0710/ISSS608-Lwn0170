@@ -13,3 +13,18 @@
 .navbar .nav-link.active {
   color: #ffffff !important;
 }
+
+.navbar .dropdown-menu {
+  background-color: #1b8db5;
+}
+
+.navbar .dropdown-item {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+  background-color: rgba(255,255,255,0.15);
+  color: #ffffff !important;
+}

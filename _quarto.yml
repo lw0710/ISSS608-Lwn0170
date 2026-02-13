@@ -29,7 +29,7 @@ website:
       - text: "Take-Home Exercise"
         menu:
         - text: "Take-home Exercise 1"
-          href: "TE01.html"
+          href: ""
           
     right:
       - about.qmd

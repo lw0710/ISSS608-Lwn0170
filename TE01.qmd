@@ -1,0 +1,35 @@
+---
+title: "TE01"
+author: "JIN JIAYING"
+date: "Feburary 6,2026"
+date-modified: "last-modified"
+execute: 
+  eval: true
+  echo: true
+  warning: false
+  freeze: true
+---
+
+# Overview
+
+This is Take-home Exercise 1 about observation from a survey dataset of northern mountainous regions in Vietnam. The survey is about income of informal labourers in rural areas.
+
+# Getting Start
+
+```{r}
+pacman::p_load(dplyr, skimr, ggdist, ggridges, ggthemes, colorspace, tidyverse)
+```
+
+# Importing Data
+
+```{r}
+survey <- read_excel("C:/Users/jiayi/Documents/SMU/26 Jan Term/ISSS608_Visual_Analytics_and_Applications/ISSS608_Lwn0170/data/TE01_data.xlsx")
+```
+
+# Cleaning Data
+
+```{r}
+str(survey)
+skim(survey)
+summary(survey)
+```

@@ -6,6 +6,7 @@ website:
   navbar:
     background: primary
     foreground: dark
+    
     left: 
       - text: "Hands-on Exercise"
         menu: 
@@ -17,17 +18,26 @@ website:
           href: "HE03.html"
         - text: "Hands-on Exercise 4"
           href: "HE04.html"
+        - text: "Hands-on Exercise 5"
+          href: "HE05.html"
+          
       - text: "In-class Exercise"
         menu:
         - text: "In-class Exercise 1"
           href: "IE01.html"
+          
+      - text: "Take-Home Exercise"
+        menu:
+        - text: "Take-home Exercise 1"
+          href: "TE01.html"
+          
     right:
       - about.qmd
 
 format:
   html:
     theme:
-      - Lumen
+      - lumen
     css: styles.css
     toc: true
 

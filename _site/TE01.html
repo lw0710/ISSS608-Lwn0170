@@ -1,0 +1,1929 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="JIN JIAYING">
+<meta name="dcterms.date" content="2026-02-06">
+
+<title>Take-home Exercise 1 – ISSS608-coursework website</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-957065b64c7278aab0fe864747e775e9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">ISSS608-coursework website</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-hands-on-exercise" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Hands-on Exercise</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-hands-on-exercise">    
+        <li>
+    <a class="dropdown-item" href="./HE01.html">
+ <span class="dropdown-text">Hands-on Exercise 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./HE02.html">
+ <span class="dropdown-text">Hands-on Exercise 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./HE03.html">
+ <span class="dropdown-text">Hands-on Exercise 3</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./HE04.html">
+ <span class="dropdown-text">Hands-on Exercise 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./HE05.html">
+ <span class="dropdown-text">Hands-on Exercise 5</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-take-home-exercise" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Take-Home Exercise</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-take-home-exercise">    
+        <li>
+    <a class="dropdown-item" href="./TE01.html">
+ <span class="dropdown-text">Take-home Exercise 1</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#loading-package" id="toc-loading-package" class="nav-link" data-scroll-target="#loading-package">Loading Package</a></li>
+  <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data">The Data</a>
+  <ul class="collapse">
+  <li><a href="#importing-data" id="toc-importing-data" class="nav-link" data-scroll-target="#importing-data">Importing Data</a></li>
+  </ul></li>
+  <li><a href="#data-pre-processing" id="toc-data-pre-processing" class="nav-link" data-scroll-target="#data-pre-processing">Data pre-processing</a>
+  <ul class="collapse">
+  <li><a href="#transformation" id="toc-transformation" class="nav-link" data-scroll-target="#transformation">Transformation</a></li>
+  <li><a href="#data-screening" id="toc-data-screening" class="nav-link" data-scroll-target="#data-screening">Data Screening</a></li>
+  </ul></li>
+  <li><a href="#exploratory-data-analysis--" id="toc-exploratory-data-analysis--" class="nav-link" data-scroll-target="#exploratory-data-analysis--">Exploratory Data Analysis -</a>
+  <ul class="collapse">
+  <li><a href="#distribution-of-students-learning-performance-gpa" id="toc-distribution-of-students-learning-performance-gpa" class="nav-link" data-scroll-target="#distribution-of-students-learning-performance-gpa">Distribution of Students’ Learning Performance (GPA)</a></li>
+  <li><a href="#relationship-between-learning-outcome-and-group-a-demographic-factors" id="toc-relationship-between-learning-outcome-and-group-a-demographic-factors" class="nav-link" data-scroll-target="#relationship-between-learning-outcome-and-group-a-demographic-factors">Relationship between Learning Outcome and Group A: Demographic Factors</a>
+  <ul class="collapse">
+  <li><a href="#proportional-composition-of-binary-group-a-variables-by-gpa" id="toc-proportional-composition-of-binary-group-a-variables-by-gpa" class="nav-link" data-scroll-target="#proportional-composition-of-binary-group-a-variables-by-gpa">Proportional Composition of Binary Group A Variables by GPA</a></li>
+  <li><a href="#patterns-of-ordinal-background-and-behavioral-variables-across-gpa-categories" id="toc-patterns-of-ordinal-background-and-behavioral-variables-across-gpa-categories" class="nav-link" data-scroll-target="#patterns-of-ordinal-background-and-behavioral-variables-across-gpa-categories">Patterns of Ordinal Background and Behavioral Variables Across GPA Categories</a></li>
+  </ul></li>
+  <li><a href="#relationship-between-learning-outcome-and-group-b-motivationexternal-factors-likert-plot" id="toc-relationship-between-learning-outcome-and-group-b-motivationexternal-factors-likert-plot" class="nav-link" data-scroll-target="#relationship-between-learning-outcome-and-group-b-motivationexternal-factors-likert-plot">Relationship between Learning Outcome and Group B: Motivation/External Factors (Likert plot)</a>
+  <ul class="collapse">
+  <li><a href="#heatmap-of-conditional-proportions" id="toc-heatmap-of-conditional-proportions" class="nav-link" data-scroll-target="#heatmap-of-conditional-proportions">Heatmap of conditional proportions</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#references-and-inspiration" id="toc-references-and-inspiration" class="nav-link" data-scroll-target="#references-and-inspiration">References and inspiration</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Take-home Exercise 1</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>JIN JIAYING </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 6, 2026</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">February 15, 2026</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="overview" class="level1">
+<h1>Overview</h1>
+<p>A survey aimed to manage students and factors affecting their learning outcomes was conducted in Vietnam National University (VNU). The survey is faced to both current student and alumni in VNU from March to June 2023, and there were 2170 valid feedback.</p>
+<p>This visual analysis will transform the survey data into student learning outcome insights by identifying patterns, trends, and relationships within responses.</p>
+</section>
+<section id="loading-package" class="level1">
+<h1>Loading Package</h1>
+<p>The following R packages are loaded using pacman::p_load() function.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Code Chunk</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Packages</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  gt, tidyverse, readxl, skimr,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  ggdist, ggridges, ggthemes, colorspace,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  scales, cowplot,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  seriation, dendextend, heatmaply,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  viridis)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div id="ehxssbkhub" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ehxssbkhub table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#ehxssbkhub thead, #ehxssbkhub tbody, #ehxssbkhub tfoot, #ehxssbkhub tr, #ehxssbkhub td, #ehxssbkhub th {
+  border-style: none;
+}
+
+#ehxssbkhub p {
+  margin: 0;
+  padding: 0;
+}
+
+#ehxssbkhub .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 100%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ehxssbkhub .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#ehxssbkhub .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ehxssbkhub .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ehxssbkhub .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ehxssbkhub .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ehxssbkhub .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ehxssbkhub .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ehxssbkhub .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ehxssbkhub .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ehxssbkhub .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ehxssbkhub .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ehxssbkhub .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#ehxssbkhub .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#ehxssbkhub .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ehxssbkhub .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ehxssbkhub .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ehxssbkhub .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ehxssbkhub .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ehxssbkhub .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#ehxssbkhub .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#ehxssbkhub .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#ehxssbkhub .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ehxssbkhub .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#ehxssbkhub .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#ehxssbkhub .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ehxssbkhub .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ehxssbkhub .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ehxssbkhub .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ehxssbkhub .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ehxssbkhub .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ehxssbkhub .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ehxssbkhub .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ehxssbkhub .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ehxssbkhub .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ehxssbkhub .gt_left {
+  text-align: left;
+}
+
+#ehxssbkhub .gt_center {
+  text-align: center;
+}
+
+#ehxssbkhub .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ehxssbkhub .gt_font_normal {
+  font-weight: normal;
+}
+
+#ehxssbkhub .gt_font_bold {
+  font-weight: bold;
+}
+
+#ehxssbkhub .gt_font_italic {
+  font-style: italic;
+}
+
+#ehxssbkhub .gt_super {
+  font-size: 65%;
+}
+
+#ehxssbkhub .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#ehxssbkhub .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#ehxssbkhub .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#ehxssbkhub .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#ehxssbkhub .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#ehxssbkhub .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#ehxssbkhub .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#ehxssbkhub .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#ehxssbkhub div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<td colspan="2" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="font-size: 22px; font-weight: bold">Software and R packages used in this analysis</td>
+</tr>
+<tr class="gt_col_headings even">
+<th id="Package" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-size: 16px; font-weight: bold; background-color: #F2F2F2" scope="col">Package</th>
+<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-size: 16px; font-weight: bold; background-color: #F2F2F2" scope="col">Purpose in workflow</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="gt_group_heading_row odd">
+<th colspan="2" id="R packages used" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-size: 14px; font-weight: bold; background-color: #EFEFEF; border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #BDBDBD" scope="colgroup">R packages used</th>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="R packages used  Package">tidyverse</td>
+<td class="gt_row gt_left" headers="R packages used  Description">Core tools for data wrangling, reshaping, and visualisation.</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="R packages used  Package">readxl</td>
+<td class="gt_row gt_left" headers="R packages used  Description">Reads Excel files (.xls/.xlsx) into R.</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="R packages used  Package">skimr</td>
+<td class="gt_row gt_left" headers="R packages used  Description">Compact data summaries (missingness, distributions, descriptive stats).</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="R packages used  Package">pacman</td>
+<td class="gt_row gt_left" headers="R packages used  Description">Loads/installs packages via p_load() for reproducibility.</td>
+</tr>
+<tr class="gt_group_heading_row even">
+<th colspan="2" id="Data visualization (ggplot extensions)" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-size: 14px; font-weight: bold; background-color: #EFEFEF; border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #BDBDBD" scope="colgroup">Data visualization (ggplot extensions)</th>
+</tr>
+<tr class="gt_row_group_first odd">
+<td class="gt_row gt_left" headers="Data visualization (ggplot extensions)  Package">ggplot2 (via tidyverse)</td>
+<td class="gt_row gt_left" headers="Data visualization (ggplot extensions)  Description">Primary plotting system used to build all figures.</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Data visualization (ggplot extensions)  Package">ggdist</td>
+<td class="gt_row gt_left" headers="Data visualization (ggplot extensions)  Description">Distribution/interval geoms for uncertainty and comparisons.</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Data visualization (ggplot extensions)  Package">ggridges</td>
+<td class="gt_row gt_left" headers="Data visualization (ggplot extensions)  Description">Ridge plots for comparing distributions across groups.</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Data visualization (ggplot extensions)  Package">ggthemes</td>
+<td class="gt_row gt_left" headers="Data visualization (ggplot extensions)  Description">Predefined themes for consistent plot styling.</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Data visualization (ggplot extensions)  Package">colorspace</td>
+<td class="gt_row gt_left" headers="Data visualization (ggplot extensions)  Description">Colour tools for palette control and consistent visual design.</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Data visualization (ggplot extensions)  Package">cowplot</td>
+<td class="gt_row gt_left" headers="Data visualization (ggplot extensions)  Description">Combine, align, and annotate multiple ggplots in one figure.</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<th colspan="2" id="Association and clustering / heatmap utilities" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-size: 14px; font-weight: bold; background-color: #EFEFEF; border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #BDBDBD" scope="colgroup">Association and clustering / heatmap utilities</th>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="Association and clustering / heatmap utilities  Package">seriation</td>
+<td class="gt_row gt_left" headers="Association and clustering / heatmap utilities  Description">Reorders rows/columns to reveal structure in matrices (useful for heatmaps).</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Association and clustering / heatmap utilities  Package">dendextend</td>
+<td class="gt_row gt_left" headers="Association and clustering / heatmap utilities  Description">Manipulates and customises dendrograms (reorder, cut, style).</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Association and clustering / heatmap utilities  Package">heatmaply</td>
+<td class="gt_row gt_left" headers="Association and clustering / heatmap utilities  Description">Creates interactive heatmaps (plotly-based).</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Association and clustering / heatmap utilities  Package">viridis</td>
+<td class="gt_row gt_left" headers="Association and clustering / heatmap utilities  Description">Perceptually uniform, colourblind-friendly palettes.</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-data" class="level1">
+<h1>The Data</h1>
+<p>The survey data is the “Database paper” file in excel format and related “CODEBOOK” file in word format, retrieved from <a href="https://data.mendeley.com/datasets/23ppcdbmhc/1">Mendelay Data</a>.</p>
+<section id="importing-data" class="level2">
+<h2 class="anchored" data-anchor-id="importing-data">Importing Data</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>raw <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"C:/Users/jiayi/Documents/SMU/26 Jan Term/ISSS608_Visual_Analytics_and_Applications/ISSS608_Lwn0170/data/TE01_data.xlsx"</span>, <span class="at">sheet =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="data-pre-processing" class="level1">
+<h1>Data pre-processing</h1>
+<p>Before using survey data, we first take a look and have a further study of the dataset.</p>
+<p>The dataset consists of 2,170 rows and 22 columns.</p>
+<section id="transformation" class="level2">
+<h2 class="anchored" data-anchor-id="transformation">Transformation</h2>
+<p>The survey data were initially encoded numerically,where discrete integers represent categorical responses (e.g., 1 = “Male”, 2 = “Female”). Based on the CODEBOOK, these variables were transformed into factors for nominal categories and ordered factors for ordinal scales.</p>
+<p>In this case, the dataset preserves the measurement level of each variable, enforces a meaningful ordering for ordinal responses, and also generates correctly ordered axes with interpretable labels in visual analysis later.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>survey <span class="ot">&lt;-</span> raw <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">Year =</span> <span class="fu">factor</span>(</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>      Year, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"First-year"</span>, <span class="st">"Second-year"</span>, <span class="st">"Third-year"</span>, <span class="st">"Fourth-year"</span>, <span class="st">"Graduated"</span>),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">ordered =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">Gender =</span> <span class="fu">factor</span>(Gender, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Male"</span>, <span class="st">"Female"</span>)),</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">Policy_Stu   =</span> <span class="fu">factor</span>(Policy_Stu,   <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Yes"</span>,<span class="st">"No"</span>)),</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">Minority_Stu =</span> <span class="fu">factor</span>(Minority_Stu, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Yes"</span>,<span class="st">"No"</span>)),</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">Poor_Stu     =</span> <span class="fu">factor</span>(Poor_Stu,     <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Yes"</span>,<span class="st">"No"</span>)),</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">Father_Edu =</span> <span class="fu">factor</span>(</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>      Father_Edu, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Primary school"</span>, <span class="st">"Secondary school"</span>, <span class="st">"High school"</span>, <span class="st">"College school"</span>, <span class="st">"University/graduate education"</span>, <span class="st">"Other"</span>),</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">ordered =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">Mother_Edu =</span> <span class="fu">factor</span>(</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>      Mother_Edu, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Primary school"</span>, <span class="st">"Secondary school"</span>, <span class="st">"High school"</span>, <span class="st">"College school"</span>, <span class="st">"University/graduate education"</span>, <span class="st">"Other"</span>),</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">ordered =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">Father_Occupation =</span> <span class="fu">factor</span>(</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>      Father_Occupation, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Government employee"</span>, <span class="st">"Self-employment"</span>, <span class="st">"Freelance"</span>, <span class="st">"Other"</span>, <span class="st">"Not public"</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">Mother_Occupation =</span> <span class="fu">factor</span>(</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>      Mother_Occupation, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Government employee"</span>, <span class="st">"Self-employment"</span>, <span class="st">"Freelance"</span>, <span class="st">"Other"</span>, <span class="st">"Not public"</span>)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">Time_Friends =</span> <span class="fu">factor</span>(</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>      Time_Friends, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"under 1 hour"</span>, <span class="st">"1 to &lt;2 hours"</span>, <span class="st">"2 to &lt;3 hours"</span>, <span class="st">"3 to &lt;4 hours"</span>, <span class="st">"over 4 hours"</span>),</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>      <span class="at">ordered =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">Time_SocicalMedia =</span> <span class="fu">factor</span>(</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>      Time_SocicalMedia, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"under 1 hour"</span>, <span class="st">"1 to &lt;2 hours"</span>, <span class="st">"2 to &lt;3 hours"</span>, <span class="st">"3 to &lt;4 hours"</span>, <span class="st">"over 4 hours"</span>),</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>      <span class="at">ordered =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">Time_Studying =</span> <span class="fu">factor</span>(</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>      Time_Studying, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"under 2 hours"</span>, <span class="st">"2 to &lt;4 hours"</span>, <span class="st">"4 to &lt;6 hours"</span>, <span class="st">"6 to &lt;8 hours"</span>, <span class="st">"over 8 hour"</span>),</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>      <span class="at">ordered =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">GPA =</span> <span class="fu">factor</span>(</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>      GPA, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Poor"</span>, <span class="st">"Average"</span>, <span class="st">"Fair"</span>, <span class="st">"Good"</span>, <span class="st">"Excellent"</span>),</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>      <span class="at">ordered =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">Adapt_Learning_Uni =</span> <span class="fu">factor</span>(</span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>      Adapt_Learning_Uni, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Not at all"</span>, <span class="st">"Little"</span>, <span class="st">"Moderate"</span>, <span class="st">"Quite"</span>, <span class="st">"Very"</span>),</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>      <span class="at">ordered =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>    <span class="at">Study_Methods =</span> <span class="fu">factor</span>(</span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>      Study_Methods, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Not at all"</span>, <span class="st">"Little"</span>, <span class="st">"Moderate"</span>, <span class="st">"Quite"</span>, <span class="st">"Very"</span>),</span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>      <span class="at">ordered =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>    <span class="at">SupportOf_Uni =</span> <span class="fu">factor</span>(</span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>      SupportOf_Uni, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Not at all"</span>, <span class="st">"Little"</span>, <span class="st">"Moderate"</span>, <span class="st">"Quite"</span>, <span class="st">"Very"</span>),</span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>      <span class="at">ordered =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>    <span class="at">SupportOf_Lec =</span> <span class="fu">factor</span>(</span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>      SupportOf_Lec, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Not at all"</span>, <span class="st">"Little"</span>, <span class="st">"Moderate"</span>, <span class="st">"Quite"</span>, <span class="st">"Very"</span>),</span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>      <span class="at">ordered =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>    <span class="at">Facilitie_Uni =</span> <span class="fu">factor</span>(</span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a>      Facilitie_Uni, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Not at all"</span>, <span class="st">"Little"</span>, <span class="st">"Moderate"</span>, <span class="st">"Quite"</span>, <span class="st">"Very"</span>),</span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a>      <span class="at">ordered =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a>    <span class="at">Quality_Lecturer =</span> <span class="fu">factor</span>(</span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a>      Quality_Lecturer, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Not at all"</span>, <span class="st">"Little"</span>, <span class="st">"Moderate"</span>, <span class="st">"Quite"</span>, <span class="st">"Very"</span>),</span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a>      <span class="at">ordered =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a>    <span class="at">TrainingCurriculum =</span> <span class="fu">factor</span>(</span>
+<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a>      TrainingCurriculum, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Not at all"</span>, <span class="st">"Little"</span>, <span class="st">"Moderate"</span>, <span class="st">"Quite"</span>, <span class="st">"Very"</span>),</span>
+<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a>      <span class="at">ordered =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a>    <span class="at">Competitive_Class =</span> <span class="fu">factor</span>(</span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a>      Competitive_Class, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Not at all"</span>, <span class="st">"Little"</span>, <span class="st">"Moderate"</span>, <span class="st">"Quite"</span>, <span class="st">"Very"</span>),</span>
+<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a>      <span class="at">ordered =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a>    <span class="at">InfuenceF_Friends =</span> <span class="fu">factor</span>(</span>
+<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a>      InfuenceF_Friends, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Not at all"</span>, <span class="st">"Little"</span>, <span class="st">"Moderate"</span>, <span class="st">"Quite"</span>, <span class="st">"Very"</span>),</span>
+<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a>      <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="data-screening" class="level2">
+<h2 class="anchored" data-anchor-id="data-screening">Data Screening</h2>
+<p>Following the conceptual framework of the <a href="https://www.sciencedirect.com/science/article/pii/S2352340925001702#bib0001">original survey study</a>, all explanatory variables were grouped into two categories: (A) demographic factors, and (B) motivation and external learning factors. GPA is treated separately as the outcome variable, representing student learning performance.</p>
+<p>Before visualising the survey results, table() was used to inspect the frequency distribution of each categorical variable (including missing values).</p>
+<p>This quick check confirms whether coded responses follow the CODEBOOK, reveals empty categories or imbalanced groups, and helps identify potential data issues (e.g., unexpected codes) that could affect interpretation.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Demographic Factors#</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>A_vars <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Year"</span>, <span class="st">"Gender"</span>, <span class="st">"Policy_Stu"</span>, <span class="st">"Minority_Stu"</span>, <span class="st">"Poor_Stu"</span>, <span class="st">"Father_Edu"</span>, <span class="st">"Mother_Edu"</span>, <span class="st">"Father_Occupation"</span>, <span class="st">"Mother_Occupation"</span>, <span class="st">"Time_Friends"</span>, <span class="st">"Time_SocicalMedia"</span>, <span class="st">"Time_Studying"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Motivation/External Factors#</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>B_vars <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Adapt_Learning_Uni"</span>, <span class="st">"Study_Methods"</span>, <span class="st">"SupportOf_Uni"</span>, <span class="st">"SupportOf_Lec"</span>, <span class="st">"Facilitie_Uni"</span>, <span class="st">"Quality_Lecturer"</span>, <span class="st">"TrainingCurriculum"</span>, <span class="st">"Competitive_Class"</span>, <span class="st">"InfuenceF_Friends"</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">#Outcome</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>outcome_var <span class="ot">&lt;-</span> <span class="st">"GPA"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Group A: Demographic Factors</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Group B: Motivation/External Factors</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">Outcome: GPA</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+============================
+Variable: Year 
+============================
+
+ First-year Second-year  Third-year Fourth-year   Graduated 
+          0           0         135         441        1594 
+
+============================
+Variable: Gender 
+============================
+
+  Male Female 
+   240   1930 
+
+============================
+Variable: Policy_Stu 
+============================
+
+ Yes   No 
+ 766 1404 
+
+============================
+Variable: Minority_Stu 
+============================
+
+ Yes   No 
+ 129 2041 
+
+============================
+Variable: Poor_Stu 
+============================
+
+ Yes   No 
+  86 2084 
+
+============================
+Variable: Father_Edu 
+============================
+
+               Primary school              Secondary school 
+                          120                           274 
+                  High school                College school 
+                          603                           370 
+University/graduate education                         Other 
+                          643                           160 
+
+============================
+Variable: Mother_Edu 
+============================
+
+               Primary school              Secondary school 
+                          125                           294 
+                  High school                College school 
+                          592                           495 
+University/graduate education                         Other 
+                          502                           162 
+
+============================
+Variable: Father_Occupation 
+============================
+
+Government employee     Self-employment           Freelance               Other 
+                514                 565                 650                 409 
+         Not public 
+                 32 
+
+============================
+Variable: Mother_Occupation 
+============================
+
+Government employee     Self-employment           Freelance               Other 
+                491                 557                 695                 405 
+         Not public 
+                 22 
+
+============================
+Variable: Time_Friends 
+============================
+
+ under 1 hour 1 to &lt;2 hours 2 to &lt;3 hours 3 to &lt;4 hours  over 4 hours 
+          557           785           590           152            86 
+
+============================
+Variable: Time_SocicalMedia 
+============================
+
+ under 1 hour 1 to &lt;2 hours 2 to &lt;3 hours 3 to &lt;4 hours  over 4 hours 
+          229           735           634           306           266 
+
+============================
+Variable: Time_Studying 
+============================
+
+under 2 hours 2 to &lt;4 hours 4 to &lt;6 hours 6 to &lt;8 hours   over 8 hour 
+           17            47            78           245          1783 </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+============================
+Variable: Adapt_Learning_Uni 
+============================
+
+Not at all     Little   Moderate      Quite       Very 
+        70        152        954        606        388 
+
+============================
+Variable: Study_Methods 
+============================
+
+Not at all     Little   Moderate      Quite       Very 
+        33        120        869        674        474 
+
+============================
+Variable: SupportOf_Uni 
+============================
+
+Not at all     Little   Moderate      Quite       Very 
+        51         61        553        675        830 
+
+============================
+Variable: SupportOf_Lec 
+============================
+
+Not at all     Little   Moderate      Quite       Very 
+        20         28        448        706        968 
+
+============================
+Variable: Facilitie_Uni 
+============================
+
+Not at all     Little   Moderate      Quite       Very 
+        36        131        399        677        927 
+
+============================
+Variable: Quality_Lecturer 
+============================
+
+Not at all     Little   Moderate      Quite       Very 
+        16         24        342        636       1152 
+
+============================
+Variable: TrainingCurriculum 
+============================
+
+Not at all     Little   Moderate      Quite       Very 
+        12         45        465        779        869 
+
+============================
+Variable: Competitive_Class 
+============================
+
+Not at all     Little   Moderate      Quite       Very 
+        13         76        629        772        680 
+
+============================
+Variable: InfuenceF_Friends 
+============================
+
+Not at all     Little   Moderate      Quite       Very 
+        20         82        707        797        564 </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+============================
+Variable: GPA 
+============================
+
+     Poor   Average      Fair      Good Excellent 
+       73       109      1189       692       107 </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>The result shows an imbalanced distribution in study year and gender. There were no first- or second-year respondents in the survey responses, and female students substantially outnumbered male students.</p>
+<p>To improve interpretability and avoid misleading comparisons driven by sparse categories, the study-year variable was recoded into two groups: “current students (3rd/4th year)” and “graduated.” Gender was retained but interpreted with caution due to the uneven group sizes.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>survey_final <span class="ot">&lt;-</span> survey <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">Year_group =</span> <span class="fu">case_when</span>(</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>      Year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Third-year"</span>, <span class="st">"Fourth-year"</span>) <span class="sc">~</span> <span class="st">"Current (3rd/4th)"</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>      Year <span class="sc">==</span> <span class="st">"Graduated"</span> <span class="sc">~</span> <span class="st">"Graduated"</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_character_</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">factor</span>(<span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Current (3rd/4th)"</span>, <span class="st">"Graduated"</span>))</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(survey_final<span class="sc">$</span>Year_group, <span class="at">useNA =</span> <span class="st">"ifany"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Current (3rd/4th)         Graduated 
+              576              1594 </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="exploratory-data-analysis--" class="level1">
+<h1>Exploratory Data Analysis -</h1>
+<section id="distribution-of-students-learning-performance-gpa" class="level2">
+<h2 class="anchored" data-anchor-id="distribution-of-students-learning-performance-gpa">Distribution of Students’ Learning Performance (GPA)</h2>
+<p>GPA is measured as an ordered categorical variable rather than a continuous numeric measure, a bar chart is more appropriate for visualizing its frequency distributions and allows clearer comparison across GPA groups.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>gpa_dist <span class="ot">&lt;-</span> <span class="fu">count</span>(survey_final, GPA)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gpa_dist, <span class="fu">aes</span>(<span class="at">x =</span> GPA, <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> n), <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Distribution of GPA"</span>,</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"GPA category"</span>,</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Number of students"</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE01_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The distribution of GPA shows a clear concentration in the middle categories. The majority of respondents fall into the “Fair” (n = 1189) and “Good” (n = 692) categories, while relatively few students are located at the extremes.</p>
+<p>This indicates that learning performance in the survey is clustered around moderate achievement levels rather than polarized at either the high or low end.</p>
+<p>This pattern suggests that explanatory factors are more likely to manifest as subtle distributional shifts rather than dramatic polarization effects. Thus, for subsequent analyses, we will focus on examining proportional differences across GPA levels rather than assuming large structural divides.</p>
+</section>
+<section id="relationship-between-learning-outcome-and-group-a-demographic-factors" class="level2">
+<h2 class="anchored" data-anchor-id="relationship-between-learning-outcome-and-group-a-demographic-factors">Relationship between Learning Outcome and Group A: Demographic Factors</h2>
+<p>To improve interpretability, Group A variables are separated into two sets based on their measurement structure.</p>
+<p>The first set contains binary variables only, which are well-suited for 100% stacked bar charts because the proportional composition remains easy to compare across GPA categories.</p>
+<p>The second set contains multi-level ordinal or categorical variables. For these variables, stacked bars become visually cluttered due to many categories and colors. Therefore, heatmap is used to highlight distributional shifts across GPA levels more clearly while reducing unnecessary visual noise.</p>
+<p>Last but not least, percentages rather than count nnumber will be used due to the data sizes differ between groups and GPA levels.</p>
+<section id="proportional-composition-of-binary-group-a-variables-by-gpa" class="level3">
+<h3 class="anchored" data-anchor-id="proportional-composition-of-binary-group-a-variables-by-gpa">Proportional Composition of Binary Group A Variables by GPA</h3>
+<p><strong>Binary Group A variables (2 levels):</strong></p>
+<ul>
+<li>Year_group</li>
+<li>Gender</li>
+<li>Policy_Stu</li>
+<li>Minority_Stu</li>
+<li>Poor_Stu</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>n_by_gpa <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">count</span>(survey_final, GPA, <span class="at">name =</span> <span class="st">"n"</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>p_year <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(survey_final, <span class="fu">aes</span>(<span class="at">x =</span> GPA, <span class="at">fill =</span> Year_group)) <span class="sc">+</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> n_by_gpa,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x =</span> GPA, <span class="at">y =</span> <span class="fl">1.08</span>, <span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">"n="</span>, n)),</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> percent) <span class="sc">+</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="cf">function</span>(x) stringr<span class="sc">::</span><span class="fu">str_wrap</span>(x, <span class="at">width =</span> <span class="dv">12</span>)) <span class="sc">+</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option =</span> <span class="st">"C"</span>, <span class="at">begin =</span> <span class="fl">0.1</span>, <span class="at">end =</span> <span class="fl">0.9</span>, <span class="at">name =</span> <span class="st">"Year_group"</span>) <span class="sc">+</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">30</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Proportion"</span>, <span class="at">title =</span> <span class="st">"Year_group"</span>)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>p_gender <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(survey_final, <span class="fu">aes</span>(<span class="at">x =</span> GPA, <span class="at">fill =</span> Gender)) <span class="sc">+</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> n_by_gpa,</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x =</span> GPA, <span class="at">y =</span> <span class="fl">1.08</span>, <span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">"n="</span>, n)),</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>            <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> percent) <span class="sc">+</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="cf">function</span>(x) stringr<span class="sc">::</span><span class="fu">str_wrap</span>(x, <span class="at">width =</span> <span class="dv">12</span>)) <span class="sc">+</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option =</span> <span class="st">"C"</span>, <span class="at">begin =</span> <span class="fl">0.1</span>, <span class="at">end =</span> <span class="fl">0.9</span>, <span class="at">name =</span> <span class="st">"Gender"</span>) <span class="sc">+</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">30</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Proportion"</span>, <span class="at">title =</span> <span class="st">"Gender"</span>)</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>p_policy <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(survey_final, <span class="fu">aes</span>(<span class="at">x =</span> GPA, <span class="at">fill =</span> Policy_Stu)) <span class="sc">+</span></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> n_by_gpa,</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x =</span> GPA, <span class="at">y =</span> <span class="fl">1.08</span>, <span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">"n="</span>, n)),</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>            <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> percent) <span class="sc">+</span></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="cf">function</span>(x) stringr<span class="sc">::</span><span class="fu">str_wrap</span>(x, <span class="at">width =</span> <span class="dv">12</span>)) <span class="sc">+</span></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option =</span> <span class="st">"C"</span>, <span class="at">begin =</span> <span class="fl">0.1</span>, <span class="at">end =</span> <span class="fl">0.9</span>, <span class="at">name =</span> <span class="st">"Policy_Stu"</span>) <span class="sc">+</span></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">30</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Proportion"</span>, <span class="at">title =</span> <span class="st">"Policy_Stu"</span>)</span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>p_minority <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(survey_final, <span class="fu">aes</span>(<span class="at">x =</span> GPA, <span class="at">fill =</span> Minority_Stu)) <span class="sc">+</span></span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> n_by_gpa,</span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x =</span> GPA, <span class="at">y =</span> <span class="fl">1.08</span>, <span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">"n="</span>, n)),</span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>            <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> percent) <span class="sc">+</span></span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="cf">function</span>(x) stringr<span class="sc">::</span><span class="fu">str_wrap</span>(x, <span class="at">width =</span> <span class="dv">12</span>)) <span class="sc">+</span></span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option =</span> <span class="st">"C"</span>, <span class="at">begin =</span> <span class="fl">0.1</span>, <span class="at">end =</span> <span class="fl">0.9</span>, <span class="at">name =</span> <span class="st">"Minority_Stu"</span>) <span class="sc">+</span></span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">30</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Proportion"</span>, <span class="at">title =</span> <span class="st">"Minority_Stu"</span>)</span>
+<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a>p_poor <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(survey_final, <span class="fu">aes</span>(<span class="at">x =</span> GPA, <span class="at">fill =</span> Poor_Stu)) <span class="sc">+</span></span>
+<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> n_by_gpa,</span>
+<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x =</span> GPA, <span class="at">y =</span> <span class="fl">1.08</span>, <span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">"n="</span>, n)),</span>
+<span id="cb11-52"><a href="#cb11-52" aria-hidden="true" tabindex="-1"></a>            <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb11-53"><a href="#cb11-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> percent) <span class="sc">+</span></span>
+<span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="cf">function</span>(x) stringr<span class="sc">::</span><span class="fu">str_wrap</span>(x, <span class="at">width =</span> <span class="dv">12</span>)) <span class="sc">+</span></span>
+<span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option =</span> <span class="st">"C"</span>, <span class="at">begin =</span> <span class="fl">0.1</span>, <span class="at">end =</span> <span class="fl">0.9</span>, <span class="at">name =</span> <span class="st">"Poor_Stu"</span>) <span class="sc">+</span></span>
+<span id="cb11-56"><a href="#cb11-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">30</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Proportion"</span>, <span class="at">title =</span> <span class="st">"Poor_Stu"</span>)</span>
+<span id="cb11-58"><a href="#cb11-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(p_year, p_gender, p_policy, p_minority, p_poor, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE01_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>As shown in the figure, the binary background indicators exhibit largely stable proportional patterns across GPA categories. While minor distributional shifts are observable for year of study and policy support, no pronounced polarization is evident. Overall, the visual evidence suggests limited differentiation in GPA by these binary background factors.</p>
+<p>Therefore, we next examine multi-level socioeconomic and time-use factors using heatmap to detect finer distributional shifts.</p>
+</section>
+<section id="patterns-of-ordinal-background-and-behavioral-variables-across-gpa-categories" class="level3">
+<h3 class="anchored" data-anchor-id="patterns-of-ordinal-background-and-behavioral-variables-across-gpa-categories">Patterns of Ordinal Background and Behavioral Variables Across GPA Categories</h3>
+<p><strong>Multi-level Group A variables (ordinal / categorical):</strong></p>
+<ul>
+<li>Father_Edu</li>
+<li>Mother_Edu</li>
+<li>Father_Occupation</li>
+<li>Mother_Occupation</li>
+<li>Time_Friends</li>
+<li>Time_SocicalMedia</li>
+<li>Time_Studying</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>plot_heatmap <span class="ot">&lt;-</span> <span class="cf">function</span>(df, var, <span class="at">x =</span> <span class="st">"GPA"</span>){</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  heat_df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">count</span>(.data[[x]], .data[[var]], <span class="at">name =</span> <span class="st">"n"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(.data[[x]]) <span class="sc">%&gt;%</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">p =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">X =</span> <span class="dv">1</span>, <span class="at">Level =</span> <span class="dv">2</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(heat_df, <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Level, <span class="at">fill =</span> p)) <span class="sc">+</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_tile</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">linewidth =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="cf">function</span>(x) stringr<span class="sc">::</span><span class="fu">str_wrap</span>(x, <span class="at">width =</span> <span class="dv">12</span>)) <span class="sc">+</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"C"</span>, <span class="at">begin =</span> <span class="fl">0.1</span>, <span class="at">end =</span> <span class="fl">0.9</span>, <span class="at">direction =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">name =</span> <span class="st">"Proportion"</span>) <span class="sc">+</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>)) <span class="sc">+</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> var, <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>, <span class="at">fill =</span> <span class="st">"Proportion"</span>) <span class="sc">+</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">30</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">8</span>),</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">10</span>)</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>multi_vars <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Father_Edu"</span>, <span class="st">"Mother_Edu"</span>,</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Father_Occupation"</span>, <span class="st">"Mother_Occupation"</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>plots <span class="ot">&lt;-</span> <span class="fu">lapply</span>(multi_vars, <span class="cf">function</span>(v) <span class="fu">plot_heatmap</span>(survey_final, v))</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(<span class="at">plotlist =</span> plots, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">align =</span> <span class="st">"hv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE01_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="1344"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>As shown in the heatmaps, the multi-category family background variables (parents’ education and occupation) display broadly stable composition across GPA categories. While localized shifts appear in specific cells, no clear monotonic gradient is visible in which higher parental education or a particular occupation type becomes progressively more dominant as GPA increases. Instead, most categories are represented across multiple GPA levels, suggesting that these socioeconomic indicators alone do not strongly separate learning outcomes.</p>
+<p>Therefore, we next examine students’ time-use and learning environment factors using heatmaps to identify finer distributional shifts that may be less apparent in binary comparisons.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>multi_vars2 <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Time_Friends"</span>, <span class="st">"Time_SocicalMedia"</span>, <span class="st">"Time_Studying"</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>plots2 <span class="ot">&lt;-</span> <span class="fu">lapply</span>(multi_vars2, <span class="cf">function</span>(v) <span class="fu">plot_heatmap</span>(survey_final, v))</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(<span class="at">plotlist =</span> plots2, <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">align =</span> <span class="st">"hv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE01_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="1344"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>plot_mean_rank_trend <span class="ot">&lt;-</span> <span class="cf">function</span>(df, time_vars, <span class="at">x =</span> <span class="st">"GPA"</span>) {</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  trend_df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="fu">all_of</span>(<span class="fu">c</span>(x, time_vars))) <span class="sc">%&gt;%</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">all_of</span>(time_vars),</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">names_to =</span> <span class="st">"TimeType"</span>,</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">values_to =</span> <span class="st">"Level"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">GPA =</span> <span class="fu">factor</span>(.data[[x]], <span class="at">ordered =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">Level_num =</span> <span class="fu">as.numeric</span>(Level)</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(GPA, TimeType) <span class="sc">%&gt;%</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">mean_rank   =</span> <span class="fu">mean</span>(Level_num, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">n =</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(Level_num)),</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(trend_df, <span class="fu">aes</span>(<span class="at">x =</span> GPA, <span class="at">y =</span> mean_rank, <span class="at">group =</span> TimeType, <span class="at">color =</span> TimeType)) <span class="sc">+</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">"n="</span>, n)), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.8</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"Mean time-use rank by GPA category"</span>,</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"GPA category"</span>,</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Mean time rank (1 = lowest, 5 = highest)"</span>,</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"Time variable"</span></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">30</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_mean_rank_trend</span>(raw, multi_vars2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE01_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The heatmaps suggest gradual distributional shifts in time-use categories across GPA groups. In particular, higher GPA categories appear to contain a larger share of respondents in higher study-time levels, while lower GPA categories show relatively greater concentration in higher social media and (to a lesser extent) friends-time levels.</p>
+<p>This visual pattern aligns with the mean-rank trend plot: the average rank for Time_Studying increases modestly with GPA, whereas Time_SocicalMedia and Time_Friends display mild downward trends as GPA rises.</p>
+<p>Overall, the combined visuals indicate a plausible association between reported time allocation and GPA categories. However, the differences are not strongly polarized, and these findings are descriptive rather than causal.</p>
+</section>
+</section>
+<section id="relationship-between-learning-outcome-and-group-b-motivationexternal-factors-likert-plot" class="level2">
+<h2 class="anchored" data-anchor-id="relationship-between-learning-outcome-and-group-b-motivationexternal-factors-likert-plot">Relationship between Learning Outcome and Group B: Motivation/External Factors (Likert plot)</h2>
+<p>Building on the descriptive analysis of Group A Factors, we next examine Group B Factors, which capture students’ self-reported motivation and learning environment conditions (such as training process, facilities, and perceived support from the university, lecturers, and peers). These variables are measured on Likert-type ordinal scales, so our goal is to compare response distributions rather than treat the values as continuous scores. To visualise these patterns clearly, we use Likert-style distribution plots to summarise overall agreement levels and to assess whether the composition of responses shifts across GPA categories.</p>
+<section id="heatmap-of-conditional-proportions" class="level3">
+<h3 class="anchored" data-anchor-id="heatmap-of-conditional-proportions">Heatmap of conditional proportions</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>likert_vars <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Adapt_Learning_Uni"</span>, <span class="st">"Study_Methods"</span>, <span class="st">"SupportOf_Uni"</span>, <span class="st">"SupportOf_Lec"</span>,</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Facilitie_Uni"</span>, <span class="st">"Quality_Lecturer"</span>, <span class="st">"TrainingCurriculum"</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Competitive_Class"</span>, <span class="st">"InfuenceF_Friends"</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>likert_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Adapt_Learning_Uni  =</span> <span class="st">"Adaptation to university learning"</span>,</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Study_Methods       =</span> <span class="st">"Study methods effectiveness"</span>,</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">SupportOf_Uni       =</span> <span class="st">"University support"</span>,</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">SupportOf_Lec       =</span> <span class="st">"Lecturer support"</span>,</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">Facilitie_Uni       =</span> <span class="st">"University facilities"</span>,</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">Quality_Lecturer    =</span> <span class="st">"Lecturer quality"</span>,</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">TrainingCurriculum  =</span> <span class="st">"Curriculum/training relevance"</span>,</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">Competitive_Class   =</span> <span class="st">"Class competitiveness"</span>,</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">InfuenceF_Friends   =</span> <span class="st">"Friends' influence"</span></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>likert_long <span class="ot">&lt;-</span> raw <span class="sc">%&gt;%</span></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">all_of</span>(likert_vars)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>(), <span class="at">names_to =</span> <span class="st">"item"</span>, <span class="at">values_to =</span> <span class="st">"resp"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(resp)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">resp =</span> <span class="fu">as.integer</span>(resp),</span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">item_label =</span> <span class="fu">recode</span>(item, <span class="sc">!!!</span>likert_labels),</span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">resp_f =</span> <span class="fu">factor</span>(resp, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"1 - Not at all"</span>, <span class="st">"2 -   Little"</span>, <span class="st">"3 -   Moderate"</span>,</span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"4 - Quite"</span>, <span class="st">"5 -    Very"</span>))</span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>likert_prop <span class="ot">&lt;-</span> likert_long <span class="sc">%&gt;%</span></span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(item, item_label, resp, resp_f) <span class="sc">%&gt;%</span></span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(item, item_label) <span class="sc">%&gt;%</span></span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a>rank_top2 <span class="ot">&lt;-</span> likert_prop <span class="sc">%&gt;%</span></span>
+<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(resp <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(item_label) <span class="sc">%&gt;%</span></span>
+<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">top2 =</span> <span class="fu">sum</span>(prop), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(top2)</span>
+<span id="cb15-43"><a href="#cb15-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-44"><a href="#cb15-44" aria-hidden="true" tabindex="-1"></a>plot_df <span class="ot">&lt;-</span> likert_prop <span class="sc">%&gt;%</span></span>
+<span id="cb15-45"><a href="#cb15-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(rank_top2, <span class="at">by =</span> <span class="st">"item_label"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb15-46"><a href="#cb15-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb15-47"><a href="#cb15-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">item_label =</span> <span class="fu">factor</span>(item_label, <span class="at">levels =</span> rank_top2<span class="sc">$</span>item_label),</span>
+<span id="cb15-48"><a href="#cb15-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">prop_div =</span> <span class="fu">ifelse</span>(resp <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="sc">-</span>prop, prop),</span>
+<span id="cb15-49"><a href="#cb15-49" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb15-50"><a href="#cb15-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-51"><a href="#cb15-51" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plot_df, <span class="fu">aes</span>(<span class="at">x =</span> prop_div, <span class="at">y =</span> item_label, <span class="at">fill =</span> resp_f)) <span class="sc">+</span></span>
+<span id="cb15-52"><a href="#cb15-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.72</span>) <span class="sc">+</span></span>
+<span id="cb15-53"><a href="#cb15-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">linewidth =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb15-54"><a href="#cb15-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(</span>
+<span id="cb15-55"><a href="#cb15-55" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">ifelse</span>(prop <span class="sc">&gt;=</span> <span class="fl">0.06</span>, scales<span class="sc">::</span><span class="fu">percent</span>(prop, <span class="at">accuracy =</span> <span class="dv">1</span>), <span class="st">""</span>)),</span>
+<span id="cb15-56"><a href="#cb15-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb15-57"><a href="#cb15-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb15-58"><a href="#cb15-58" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"white"</span></span>
+<span id="cb15-59"><a href="#cb15-59" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb15-60"><a href="#cb15-60" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>(<span class="at">accuracy =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb15-61"><a href="#cb15-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb15-62"><a href="#cb15-62" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Share of responses (diverging at Neutral)"</span>,</span>
+<span id="cb15-63"><a href="#cb15-63" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb15-64"><a href="#cb15-64" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Response"</span>,</span>
+<span id="cb15-65"><a href="#cb15-65" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Perceived learning environment and peer influence"</span>,</span>
+<span id="cb15-66"><a href="#cb15-66" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Diverging Likert distributions (1–5), sorted by Top-2 agreement (4–5)"</span>) <span class="sc">+</span></span>
+<span id="cb15-67"><a href="#cb15-67" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb15-68"><a href="#cb15-68" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>) <span class="sc">+</span></span>
+<span id="cb15-69"><a href="#cb15-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option =</span> <span class="st">"plasma"</span>, <span class="at">direction =</span> <span class="sc">-</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE01_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>As shown in the diverging Likert chart, responses are generally skewed toward the higher agreement levels (4–5) across most learning-environment and peer-related items, with only small proportions selecting the lowest categories (1–2). Lecturer-facing indicators (lecturer quality and lecturer support) exhibit the strongest top-2 agreement, suggesting broadly positive teaching-related perceptions in this sample. University-level conditions (facilities and university support) remain favourable but display slightly larger “moderate” shares, indicating more mixed evaluations.</p>
+<p>In comparison, adaptation to university learning and study methods effectiveness show relatively weaker top-2 agreement and greater concentration around the middle category, implying higher heterogeneity in students’ self-perceived readiness and strategy effectiveness. Overall, the plot highlights broadly positive perceptions, while adjustment and study-method factors appear less uniformly endorsed.</p>
+</section>
+</section>
+</section>
+<section id="summary" class="level1">
+<h1>Summary</h1>
+<p>Our visual analysis of students’ learning outcome GPA and its relationships with background characteristics, family context, time-use patterns, and perceived learning environment yielded several insights.</p>
+<p><strong>The key findings are:</strong></p>
+<ul>
+<li>GPA is unevenly distributed, with most students clustered in the “Fair” and “Good” categories and relatively small groups at the extremes.</li>
+<li>Demographic composition (such as gender, minority status, and financial disadvantage) shows limited variation across GPA categories in proportional comparisons.</li>
+<li>Time-use patterns demonstrate clearer gradients: higher GPA categories are consistently associated with higher study-time ranks, while social-media use (and to a lesser extent time with friends) tends to be lower.</li>
+<li>Family background variables (parents’ education and occupation) show observable association signals with GPA, suggesting that socioeconomic context may contribute to performance differences within the sample.</li>
+<li>Perceptions of the learning environment are generally positive for teaching-related dimensions (such as lecturer quality and support, curriculum relevance, and facilities), indicating perceived strengths in institutional delivery.</li>
+</ul>
+<p><strong>Recommendations for future research:</strong></p>
+<ul>
+<li>This work is followed the assumption that group A and B factors are independent with each other. In future, multivariate modelling can be used to evaluate the independent relationships of time-use and family background with GPA while controlling for potential confounders and interaction effects (such as different patterns across subgroups)</li>
+<li>The current survey data shows potential representativeness limitations (such as gender distribution skewed towards females and under-representation of Year 1–2 students). Future data collection should aim for more balanced sampling or apply weighting to reduce bias and improve generalisability.</li>
+<li>GPA value in this survey is an ordinal variable, which limits the range of visual and analytical techniques. If continuous exact numeric GPA can be collected, richer visual analyses (such as density plots, boxplots, violin plots, regression-based visualisations) and more sensitive modelling approaches can be applied.</li>
+<li>GPA is the sole learning outcome indicator in this study, yet it may not be fully comparable across programmes or course structures. Future research should consider additional outcome measures (such as standardised assessments, course difficulty indicators, credits attempted, or learning engagement metrics) to reduce subjectivity and improve comparability.</li>
+<li>Longitudinal designs can track same students over time to examine whether changes in time-use and learning perceptions precede GPA improvements, thereby strengthening causal interpretation beyond cross-sectional associations.</li>
+</ul>
+<p>By addressing these areas, future research will strengthen the reliability of these insights and enable more nuanced analyses, ultimately supporting more targeted and equitable approaches to improving student learning outcomes.</p>
+</section>
+<section id="references-and-inspiration" class="level1">
+<h1>References and inspiration</h1>
+<ul>
+<li><a href="https://www.sciencedirect.com/science/article/pii/S2352340925001702#bib0001">Dataset of factors affecting learning outcomes of students at the University of Education,Vietnam National University, Hanoi</a></li>
+<li><a href="https://data.mendeley.com/datasets/23ppcdbmhc/1">Dataset about VNU students</a></li>
+<li><a href="https://r4va.netlify.app/chap15">Visual Multivariate Analysis with Parallel Coordinates Plot</a></li>
+<li><a href="https://rfortherestofus.com/2021/10/diverging-bar-chart">How to Make a Diverging Bar Chart in R</a></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

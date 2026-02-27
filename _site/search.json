@@ -495,5 +495,54 @@
     "title": "Take-home Exercise 1",
     "section": "Relationship between Learning Outcome and Group B: Motivation/External Factors (Likert plot)",
     "text": "Relationship between Learning Outcome and Group B: Motivation/External Factors (Likert plot)\nBuilding on the descriptive analysis of Group A Factors, we next examine Group B Factors, which capture students’ self-reported motivation and learning environment conditions (such as training process, facilities, and perceived support from the university, lecturers, and peers). These variables are measured on Likert-type ordinal scales, so our goal is to compare response distributions rather than treat the values as continuous scores. To visualise these patterns clearly, we use Likert-style distribution plots to summarise overall agreement levels and to assess whether the composition of responses shifts across GPA categories.\n\nHeatmap of conditional proportions\n\nlikert_vars &lt;- c(\n  \"Adapt_Learning_Uni\", \"Study_Methods\", \"SupportOf_Uni\", \"SupportOf_Lec\",\n  \"Facilitie_Uni\", \"Quality_Lecturer\", \"TrainingCurriculum\",\n  \"Competitive_Class\", \"InfuenceF_Friends\"\n)\n\nlikert_labels &lt;- c(\n  Adapt_Learning_Uni  = \"Adaptation to university learning\",\n  Study_Methods       = \"Study methods effectiveness\",\n  SupportOf_Uni       = \"University support\",\n  SupportOf_Lec       = \"Lecturer support\",\n  Facilitie_Uni       = \"University facilities\",\n  Quality_Lecturer    = \"Lecturer quality\",\n  TrainingCurriculum  = \"Curriculum/training relevance\",\n  Competitive_Class   = \"Class competitiveness\",\n  InfuenceF_Friends   = \"Friends' influence\"\n)\n\nlikert_long &lt;- raw %&gt;%\n  select(all_of(likert_vars)) %&gt;%\n  pivot_longer(cols = everything(), names_to = \"item\", values_to = \"resp\") %&gt;%\n  filter(!is.na(resp)) %&gt;%\n  mutate(\n    resp = as.integer(resp),\n    item_label = recode(item, !!!likert_labels),\n    resp_f = factor(resp, levels = 1:5,\n                    labels = c(\"1 - Not at all\", \"2 -   Little\", \"3 -   Moderate\",\n                               \"4 - Quite\", \"5 -    Very\"))\n  )\n\n\nlikert_prop &lt;- likert_long %&gt;%\n  count(item, item_label, resp, resp_f) %&gt;%\n  group_by(item, item_label) %&gt;%\n  mutate(prop = n / sum(n)) %&gt;%\n  ungroup()\n\nrank_top2 &lt;- likert_prop %&gt;%\n  filter(resp %in% c(4, 5)) %&gt;%\n  group_by(item_label) %&gt;%\n  summarise(top2 = sum(prop), .groups = \"drop\") %&gt;%\n  arrange(top2)\n\nplot_df &lt;- likert_prop %&gt;%\n  left_join(rank_top2, by = \"item_label\") %&gt;%\n  mutate(\n    item_label = factor(item_label, levels = rank_top2$item_label),\n    prop_div = ifelse(resp %in% c(1,2), -prop, prop),\n  )\n\nggplot(plot_df, aes(x = prop_div, y = item_label, fill = resp_f)) +\n  geom_col(width = 0.72) +\n  geom_vline(xintercept = 0, linewidth = 0.4) +\n  geom_text(\n    aes(label = ifelse(prop &gt;= 0.06, scales::percent(prop, accuracy = 1), \"\")),\n    position = position_stack(vjust = 0.5),\n    size = 3,\n    color = \"white\"\n  ) +\n  scale_x_continuous(labels = scales::percent_format(accuracy = 1)) +\n  labs(\n    x = \"Share of responses (diverging at Neutral)\",\n    y = NULL,\n    fill = \"Response\",\n    title = \"Perceived learning environment and peer influence\",\n    subtitle = \"Diverging Likert distributions (1–5), sorted by Top-2 agreement (4–5)\") +\n  theme_minimal(base_size = 12) +\n  theme(legend.position = \"bottom\") +\n  scale_fill_viridis_d(option = \"plasma\", direction = -1)\n\n\n\n\n\n\n\n\nAs shown in the diverging Likert chart, responses are generally skewed toward the higher agreement levels (4–5) across most learning-environment and peer-related items, with only small proportions selecting the lowest categories (1–2). Lecturer-facing indicators (lecturer quality and lecturer support) exhibit the strongest top-2 agreement, suggesting broadly positive teaching-related perceptions in this sample. University-level conditions (facilities and university support) remain favourable but display slightly larger “moderate” shares, indicating more mixed evaluations.\nIn comparison, adaptation to university learning and study methods effectiveness show relatively weaker top-2 agreement and greater concentration around the middle category, implying higher heterogeneity in students’ self-perceived readiness and strategy effectiveness. Overall, the plot highlights broadly positive perceptions, while adjustment and study-method factors appear less uniformly endorsed."
+  },
+  {
+    "objectID": "HE07.html",
+    "href": "HE07.html",
+    "title": "Hands-on Exercise 7",
+    "section": "",
+    "text": "This is Hands-on Exercise 7.1 about creating calender heatmap, cycle plot, slopegraph and horizon chart.\n\n\n\npacman::p_load(scales, viridis, lubridate, ggthemes, gridExtra, readxl, knitr, data.table, tidyverse, CGPfunctions)"
+  },
+  {
+    "objectID": "HE07.html#getting-started",
+    "href": "HE07.html#getting-started",
+    "title": "Hands-on Exercise 7",
+    "section": "",
+    "text": "pacman::p_load(scales, viridis, lubridate, ggthemes, gridExtra, readxl, knitr, data.table, tidyverse, CGPfunctions)"
+  },
+  {
+    "objectID": "HE07.html#importing-data",
+    "href": "HE07.html#importing-data",
+    "title": "Hands-on Exercise 7",
+    "section": "7.2.1 Importing Data",
+    "text": "7.2.1 Importing Data\n\n attacks &lt;- read_csv(\"data/eventlog.csv\")"
+  },
+  {
+    "objectID": "HE07.html#examining-the-data-structure",
+    "href": "HE07.html#examining-the-data-structure",
+    "title": "Hands-on Exercise 7",
+    "section": "7.2.2 Examining the data structure",
+    "text": "7.2.2 Examining the data structure\n\nkable(head(attacks))\n\n\n\n\ntimestamp\nsource_country\ntz\n\n\n\n\n2015-03-12 15:59:16\nCN\nAsia/Shanghai\n\n\n2015-03-12 16:00:48\nFR\nEurope/Paris\n\n\n2015-03-12 16:02:26\nCN\nAsia/Shanghai\n\n\n2015-03-12 16:02:38\nUS\nAmerica/Chicago\n\n\n2015-03-12 16:03:22\nCN\nAsia/Shanghai\n\n\n2015-03-12 16:03:45\nCN\nAsia/Shanghai"
+  },
+  {
+    "objectID": "HE07.html#data-preparation",
+    "href": "HE07.html#data-preparation",
+    "title": "Hands-on Exercise 7",
+    "section": "7.2.3 Data Preparation",
+    "text": "7.2.3 Data Preparation\n\nmake_hr_wkday &lt;- function(ts, sc, tz) {\n  real_times &lt;- ymd_hms(ts, \n                        tz = tz[1], \n                        quiet = TRUE)\n  dt &lt;- data.table(source_country = sc,\n                   wkday = weekdays(real_times),\n                   hour = hour(real_times))\n  return(dt)\n}\n\nwkday_levels &lt;- c('Saturday', 'Friday', \n                  'Thursday', 'Wednesday', \n                  'Tuesday', 'Monday', \n                  'Sunday')\n\nattacks &lt;- attacks %&gt;%\n  group_by(tz) %&gt;%\n  do(make_hr_wkday(.$timestamp, \n                   .$source_country, \n                   .$tz)) %&gt;% \n  ungroup() %&gt;% \n  mutate(wkday = factor(\n    wkday, levels = wkday_levels),\n    hour  = factor(\n      hour, levels = 0:23))\n\nkable(head(attacks))\n\n\n\n\ntz\nsource_country\nwkday\nhour\n\n\n\n\nAfrica/Cairo\nBG\nSaturday\n20\n\n\nAfrica/Cairo\nTW\nSunday\n6\n\n\nAfrica/Cairo\nTW\nSunday\n8\n\n\nAfrica/Cairo\nCN\nSunday\n11\n\n\nAfrica/Cairo\nUS\nSunday\n15\n\n\nAfrica/Cairo\nCA\nMonday\n11"
+  },
+  {
+    "objectID": "HE07.html#building-the-calendar-heatmaps",
+    "href": "HE07.html#building-the-calendar-heatmaps",
+    "title": "Hands-on Exercise 7",
+    "section": "7.2.4 Building the Calendar Heatmaps",
+    "text": "7.2.4 Building the Calendar Heatmaps\n\ngrouped &lt;- attacks %&gt;% \n  count(wkday, hour) %&gt;% \n  ungroup() %&gt;%\n  na.omit()\n\nggplot(grouped, \n       aes(hour, \n           wkday, \n           fill = n)) + \ngeom_tile(color = \"white\", \n          size = 0.1) + \ntheme_tufte(base_family = \"Helvetica\") + \ncoord_equal() +\nscale_fill_gradient(name = \"# of attacks\",\n                    low = \"sky blue\", \n                    high = \"dark blue\") +\nlabs(x = NULL, \n     y = NULL, \n     title = \"Attacks by weekday and time of day\") +\ntheme(axis.ticks = element_blank(),\n      plot.title = element_text(hjust = 0.5),\n      legend.title = element_text(size = 8),\n      legend.text = element_text(size = 6) )"
+  },
+  {
+    "objectID": "HE07.html#building-multiple-calendar-heatmaps",
+    "href": "HE07.html#building-multiple-calendar-heatmaps",
+    "title": "Hands-on Exercise 7",
+    "section": "7.2.5 Building Multiple Calendar Heatmaps",
+    "text": "7.2.5 Building Multiple Calendar Heatmaps\n\nattacks_by_country &lt;- count(\n  attacks, source_country) %&gt;%\n  mutate(percent = percent(n/sum(n))) %&gt;%\n  arrange(desc(n))\n\ntop4 &lt;- attacks_by_country$source_country[1:4]\ntop4_attacks &lt;- attacks %&gt;%\n  filter(source_country %in% top4) %&gt;%\n  count(source_country, wkday, hour) %&gt;%\n  ungroup() %&gt;%\n  mutate(source_country = factor(\n    source_country, levels = top4)) %&gt;%\n  na.omit()\n\nggplot(top4_attacks, \n       aes(hour, \n           wkday, \n           fill = n)) + \n  geom_tile(color = \"white\", \n          size = 0.1) + \n  theme_tufte(base_family = \"Helvetica\") + \n  coord_equal() +\n  scale_fill_gradient(name = \"# of attacks\",\n                    low = \"sky blue\", \n                    high = \"dark blue\") +\n  facet_wrap(~source_country, ncol = 2) +\n  labs(x = NULL, y = NULL, \n     title = \"Attacks on top 4 countries by weekday and time of day\") +\n  theme(axis.ticks = element_blank(),\n        axis.text.x = element_text(size = 7),\n        plot.title = element_text(hjust = 0.5),\n        legend.title = element_text(size = 8),\n        legend.text = element_text(size = 6) )"
   }
 ]

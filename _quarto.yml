@@ -20,6 +20,9 @@ website:
           href: "HE04.html"
         - text: "Hands-on Exercise 5"
           href: "HE05.html"
+        - text: "Hands-on Exercise 6 (skip)"
+        - text: "Hands-on Exercise 7"
+          href: "HE07.html"
           
       - text: "Take-Home Exercise"
         menu:

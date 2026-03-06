@@ -1,10 +1,6 @@
 ---
-title: "ISSS608 Lwn0170"
+title: "ISSS608 AY2025-26 January Term"
 ---
 
-This is a Quarto website.
+This is the home page for ISSS608 Visual Analytics and Applications. All course exercises will be posted on this site.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```         
-```

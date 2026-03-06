@@ -11,23 +11,27 @@ website:
       - text: "Hands-on Exercise"
         menu: 
         - text: "Hands-on Exercise 1"
-          href: "HE01.html"
+          href: HE01.html
         - text: "Hands-on Exercise 2"
-          href: "HE02.html"
+          href: HE02.html
         - text: "Hands-on Exercise 3"
-          href: "HE03.html"
+          href: HE03.html
         - text: "Hands-on Exercise 4"
-          href: "HE04.html"
+          href: HE04.html
         - text: "Hands-on Exercise 5"
-          href: "HE05.html"
+          href: HE05.html
         - text: "Hands-on Exercise 6 (skip)"
         - text: "Hands-on Exercise 7"
-          href: "HE07.html"
+          href: HE07.html
+        - text: "Hands-on Exercise 8"
+          href: HE08.html
           
       - text: "Take-Home Exercise"
         menu:
         - text: "Take-home Exercise 1"
-          href: "TE01.html"
+          href: TE01.html
+        - text: "Take-home Exercise 2"
+          href: TE02.html
           
     right:
       - about.qmd

@@ -16,13 +16,13 @@ A survey aimed to manage students and factors affecting their learning outcomes 
 
 This visual analysis will transform the survey data into student learning outcome insights by identifying patterns, trends, and relationships within responses.
 
-
 # Loading Package
 
 The following R packages are loaded using pacman::p_load() function.
 
-::: {.panel-tabset}
+::: panel-tabset
 ## Code Chunk
+
 ```{r}
 pacman::p_load(
   gt, tidyverse, readxl, skimr,
@@ -33,6 +33,7 @@ pacman::p_load(
 ```
 
 ## Packages
+
 ```{r}
 #| echo: false
 #| message: false
@@ -102,7 +103,6 @@ pkg_tbl %>%
 ```
 :::
 
-
 # The Data
 
 The survey data is the "Database paper" file in excel format and related "CODEBOOK" file in word format, retrieved from [Mendelay Data](https://data.mendeley.com/datasets/23ppcdbmhc/1).
@@ -113,7 +113,6 @@ The survey data is the "Database paper" file in excel format and related "CODEBO
 raw <- read_excel("C:/Users/jiayi/Documents/SMU/26 Jan Term/ISSS608_Visual_Analytics_and_Applications/ISSS608_Lwn0170/data/TE01_data.xlsx", sheet = 1)
 ```
 
-
 # Data pre-processing
 
 Before using survey data, we first take a look and have a further study of the dataset.
@@ -122,7 +121,7 @@ The dataset consists of 2,170 rows and 22 columns.
 
 ## Transformation
 
-The survey data were initially encoded numerically,where discrete integers represent categorical responses (e.g., 1 = “Male”, 2 = “Female”). Based on the CODEBOOK, these variables were transformed into factors for nominal categories and ordered factors for ordinal scales. 
+The survey data were initially encoded numerically,where discrete integers represent categorical responses (e.g., 1 = “Male”, 2 = “Female”). Based on the CODEBOOK, these variables were transformed into factors for nominal categories and ordered factors for ordinal scales.
 
 In this case, the dataset preserves the measurement level of each variable, enforces a meaningful ordering for ordinal responses, and also generates correctly ordered axes with interpretable labels in visual analysis later.
 
@@ -234,7 +233,7 @@ survey <- raw %>%
 
 Following the conceptual framework of the [original survey study](https://www.sciencedirect.com/science/article/pii/S2352340925001702#bib0001), all explanatory variables were grouped into two categories: (A) demographic factors, and (B) motivation and external learning factors. GPA is treated separately as the outcome variable, representing student learning performance.
 
-Before visualising the survey results, table() was used to inspect the frequency distribution of each categorical variable (including missing values). 
+Before visualising the survey results, table() was used to inspect the frequency distribution of each categorical variable (including missing values).
 
 This quick check confirms whether coded responses follow the CODEBOOK, reveals empty categories or imbalanced groups, and helps identify potential data issues (e.g., unexpected codes) that could affect interpretation.
 
@@ -252,8 +251,10 @@ B_vars <- c(
 #Outcome
 outcome_var <- "GPA"
 ```
-::: {.panel-tabset}
+
+::: panel-tabset
 ## Group A: Demographic Factors
+
 ```{r}
 #| echo: false
 #| message: false
@@ -266,7 +267,9 @@ for (v in A_vars) {
   print(table(survey[[v]], useNA = "ifany"))
 }
 ```
+
 ## Group B: Motivation/External Factors
+
 ```{r}
 #| echo: false
 #| message: false
@@ -279,7 +282,9 @@ for (v in B_vars) {
   print(table(survey[[v]], useNA = "ifany"))
 }
 ```
+
 ## Outcome: GPA
+
 ```{r}
 #| echo: false
 #| message: false
@@ -294,7 +299,7 @@ for (v in outcome_var) {
 ```
 :::
 
-The result shows an imbalanced distribution in study year and gender. There were no first- or second-year respondents in the survey responses, and female students substantially outnumbered male students. 
+The result shows an imbalanced distribution in study year and gender. There were no first- or second-year respondents in the survey responses, and female students substantially outnumbered male students.
 
 To improve interpretability and avoid misleading comparisons driven by sparse categories, the study-year variable was recoded into two groups: “current students (3rd/4th year)” and “graduated.” Gender was retained but interpreted with caution due to the uneven group sizes.
 
@@ -312,10 +317,9 @@ survey_final <- survey %>%
 table(survey_final$Year_group, useNA = "ifany")
 ```
 
+# Exploratory Data Analysis -
 
-# Exploratory Data Analysis - 
-
-##  Distribution of Students’ Learning Performance (GPA)
+## Distribution of Students’ Learning Performance (GPA)
 
 GPA is measured as an ordered categorical variable rather than a continuous numeric measure, a bar chart is more appropriate for visualizing its frequency distributions and allows clearer comparison across GPA groups.
 
@@ -333,18 +337,18 @@ ggplot(gpa_dist, aes(x = GPA, y = n)) +
   ) +
   theme_minimal()
 ```
+
 The distribution of GPA shows a clear concentration in the middle categories. The majority of respondents fall into the “Fair” (n = 1189) and “Good” (n = 692) categories, while relatively few students are located at the extremes.
 
 This indicates that learning performance in the survey is clustered around moderate achievement levels rather than polarized at either the high or low end.
 
 This pattern suggests that explanatory factors are more likely to manifest as subtle distributional shifts rather than dramatic polarization effects. Thus, for subsequent analyses, we will focus on examining proportional differences across GPA levels rather than assuming large structural divides.
 
-
 ## Relationship between Learning Outcome and Group A: Demographic Factors
 
-To improve interpretability, Group A variables are separated into two sets based on their measurement structure. 
+To improve interpretability, Group A variables are separated into two sets based on their measurement structure.
 
-The first set contains binary variables only, which are well-suited for 100% stacked bar charts because the proportional composition remains easy to compare across GPA categories. 
+The first set contains binary variables only, which are well-suited for 100% stacked bar charts because the proportional composition remains easy to compare across GPA categories.
 
 The second set contains multi-level ordinal or categorical variables. For these variables, stacked bars become visually cluttered due to many categories and colors. Therefore, heatmap is used to highlight distributional shifts across GPA levels more clearly while reducing unnecessary visual noise.
 
@@ -354,11 +358,11 @@ Last but not least, percentages rather than count nnumber will be used due to th
 
 **Binary Group A variables (2 levels):**
 
-- Year_group
-- Gender
-- Policy_Stu
-- Minority_Stu
-- Poor_Stu
+-   Year_group
+-   Gender
+-   Policy_Stu
+-   Minority_Stu
+-   Poor_Stu
 
 ```{r}
 #| fig.width: 14
@@ -424,6 +428,7 @@ p_poor <- ggplot(survey_final, aes(x = GPA, fill = Poor_Stu)) +
 
 plot_grid(p_year, p_gender, p_policy, p_minority, p_poor, ncol = 2)
 ```
+
 As shown in the figure, the binary background indicators exhibit largely stable proportional patterns across GPA categories. While minor distributional shifts are observable for year of study and policy support, no pronounced polarization is evident. Overall, the visual evidence suggests limited differentiation in GPA by these binary background factors.
 
 Therefore, we next examine multi-level socioeconomic and time-use factors using heatmap to detect finer distributional shifts.
@@ -432,13 +437,13 @@ Therefore, we next examine multi-level socioeconomic and time-use factors using 
 
 **Multi-level Group A variables (ordinal / categorical):**
 
-- Father_Edu
-- Mother_Edu
-- Father_Occupation
-- Mother_Occupation
-- Time_Friends
-- Time_SocicalMedia
-- Time_Studying
+-   Father_Edu
+-   Mother_Edu
+-   Father_Occupation
+-   Mother_Occupation
+-   Time_Friends
+-   Time_SocicalMedia
+-   Time_Studying
 
 ```{r}
 #| fig.width: 14
@@ -473,6 +478,7 @@ plots <- lapply(multi_vars, function(v) plot_heatmap(survey_final, v))
 
 plot_grid(plotlist = plots, ncol = 2, align = "hv")
 ```
+
 As shown in the heatmaps, the multi-category family background variables (parents’ education and occupation) display broadly stable composition across GPA categories. While localized shifts appear in specific cells, no clear monotonic gradient is visible in which higher parental education or a particular occupation type becomes progressively more dominant as GPA increases. Instead, most categories are represented across multiple GPA levels, suggesting that these socioeconomic indicators alone do not strongly separate learning outcomes.
 
 Therefore, we next examine students’ time-use and learning environment factors using heatmaps to identify finer distributional shifts that may be less apparent in binary comparisons.
@@ -489,6 +495,7 @@ plots2 <- lapply(multi_vars2, function(v) plot_heatmap(survey_final, v))
 
 plot_grid(plotlist = plots2, ncol = 3, align = "hv")
 ```
+
 ```{r}
 plot_mean_rank_trend <- function(df, time_vars, x = "GPA") {
   trend_df <- df %>%
@@ -524,18 +531,19 @@ plot_mean_rank_trend <- function(df, time_vars, x = "GPA") {
 
 plot_mean_rank_trend(raw, multi_vars2)
 ```
-The heatmaps suggest gradual distributional shifts in time-use categories across GPA groups. In particular, higher GPA categories appear to contain a larger share of respondents in higher study-time levels, while lower GPA categories show relatively greater concentration in higher social media and (to a lesser extent) friends-time levels. 
 
-This visual pattern aligns with the mean-rank trend plot: the average rank for Time_Studying increases modestly with GPA, whereas Time_SocicalMedia and Time_Friends display mild downward trends as GPA rises. 
+The heatmaps suggest gradual distributional shifts in time-use categories across GPA groups. In particular, higher GPA categories appear to contain a larger share of respondents in higher study-time levels, while lower GPA categories show relatively greater concentration in higher social media and (to a lesser extent) friends-time levels.
+
+This visual pattern aligns with the mean-rank trend plot: the average rank for Time_Studying increases modestly with GPA, whereas Time_SocicalMedia and Time_Friends display mild downward trends as GPA rises.
 
 Overall, the combined visuals indicate a plausible association between reported time allocation and GPA categories. However, the differences are not strongly polarized, and these findings are descriptive rather than causal.
-
 
 ## Relationship between Learning Outcome and Group B: Motivation/External Factors (Likert plot)
 
 Building on the descriptive analysis of Group A Factors, we next examine Group B Factors, which capture students’ self-reported motivation and learning environment conditions (such as training process, facilities, and perceived support from the university, lecturers, and peers). These variables are measured on Likert-type ordinal scales, so our goal is to compare response distributions rather than treat the values as continuous scores. To visualise these patterns clearly, we use Likert-style distribution plots to summarise overall agreement levels and to assess whether the composition of responses shifts across GPA categories.
 
 ### Heatmap of conditional proportions
+
 ```{r}
 likert_vars <- c(
   "Adapt_Learning_Uni", "Study_Methods", "SupportOf_Uni", "SupportOf_Lec",
@@ -607,44 +615,36 @@ ggplot(plot_df, aes(x = prop_div, y = item_label, fill = resp_f)) +
   theme(legend.position = "bottom") +
   scale_fill_viridis_d(option = "plasma", direction = -1)
 ```
-As shown in the diverging Likert chart, responses are generally skewed toward the higher agreement levels (4–5) across most learning-environment and peer-related items, with only small proportions selecting the lowest categories (1–2). Lecturer-facing indicators (lecturer quality and lecturer support) exhibit the strongest top-2 agreement, suggesting broadly positive teaching-related perceptions in this sample. University-level conditions (facilities and university support) remain favourable but display slightly larger “moderate” shares, indicating more mixed evaluations. 
+
+As shown in the diverging Likert chart, responses are generally skewed toward the higher agreement levels (4–5) across most learning-environment and peer-related items, with only small proportions selecting the lowest categories (1–2). Lecturer-facing indicators (lecturer quality and lecturer support) exhibit the strongest top-2 agreement, suggesting broadly positive teaching-related perceptions in this sample. University-level conditions (facilities and university support) remain favourable but display slightly larger “moderate” shares, indicating more mixed evaluations.
 
 In comparison, adaptation to university learning and study methods effectiveness show relatively weaker top-2 agreement and greater concentration around the middle category, implying higher heterogeneity in students’ self-perceived readiness and strategy effectiveness. Overall, the plot highlights broadly positive perceptions, while adjustment and study-method factors appear less uniformly endorsed.
 
-  
 # Summary
 
-Our visual analysis of students’ learning outcome GPA and its relationships with background characteristics, family context, time-use patterns, and perceived learning environment yielded several insights. 
+Our visual analysis of students’ learning outcome GPA and its relationships with background characteristics, family context, time-use patterns, and perceived learning environment yielded several insights.
 
 **The key findings are:**
 
-- GPA is unevenly distributed, with most students clustered in the “Fair” and “Good” categories and relatively small groups at the extremes.
-- Demographic composition (such as gender, minority status, and financial disadvantage) shows limited variation across GPA categories in proportional comparisons.
-- Time-use patterns demonstrate clearer gradients: higher GPA categories are consistently associated with higher study-time ranks, while social-media use (and to a lesser extent time with friends) tends to be lower.
-- Family background variables (parents’ education and occupation) show observable association signals with GPA, suggesting that socioeconomic context may contribute to performance differences within the sample.
-- Perceptions of the learning environment are generally positive for teaching-related dimensions (such as lecturer quality and support, curriculum relevance, and facilities), indicating perceived strengths in institutional delivery.
-
-
+-   GPA is unevenly distributed, with most students clustered in the “Fair” and “Good” categories and relatively small groups at the extremes.
+-   Demographic composition (such as gender, minority status, and financial disadvantage) shows limited variation across GPA categories in proportional comparisons.
+-   Time-use patterns demonstrate clearer gradients: higher GPA categories are consistently associated with higher study-time ranks, while social-media use (and to a lesser extent time with friends) tends to be lower.
+-   Family background variables (parents’ education and occupation) show observable association signals with GPA, suggesting that socioeconomic context may contribute to performance differences within the sample.
+-   Perceptions of the learning environment are generally positive for teaching-related dimensions (such as lecturer quality and support, curriculum relevance, and facilities), indicating perceived strengths in institutional delivery.
 
 **Recommendations for future research:**
 
-- This work is followed the assumption that group A and B factors are independent with each other. In future, multivariate modelling can be used to evaluate the independent relationships of time-use and family background with GPA while controlling for potential confounders and interaction effects (such as different patterns across subgroups)
-- The current survey data shows potential representativeness limitations (such as gender distribution skewed towards females and under-representation of Year 1–2 students). Future data collection should aim for more balanced sampling or apply weighting to reduce bias and improve generalisability.
-- GPA value in this survey is an ordinal variable, which limits the range of visual and analytical techniques. If continuous exact numeric GPA can be collected, richer visual analyses (such as density plots, boxplots, violin plots, regression-based visualisations) and more sensitive modelling approaches can be applied.
-- GPA is the sole learning outcome indicator in this study, yet it may not be fully comparable across programmes or course structures. Future research should consider additional outcome measures (such as standardised assessments, course difficulty indicators, credits attempted, or learning engagement metrics) to reduce subjectivity and improve comparability.
-- Longitudinal designs can track same students over time to examine whether changes in time-use and learning perceptions precede GPA improvements, thereby strengthening causal interpretation beyond cross-sectional associations.
+-   This work is followed the assumption that group A and B factors are independent with each other. In future, multivariate modelling can be used to evaluate the independent relationships of time-use and family background with GPA while controlling for potential confounders and interaction effects (such as different patterns across subgroups)
+-   The current survey data shows potential representativeness limitations (such as gender distribution skewed towards females and under-representation of Year 1–2 students). Future data collection should aim for more balanced sampling or apply weighting to reduce bias and improve generalisability.
+-   GPA value in this survey is an ordinal variable, which limits the range of visual and analytical techniques. If continuous exact numeric GPA can be collected, richer visual analyses (such as density plots, boxplots, violin plots, regression-based visualisations) and more sensitive modelling approaches can be applied.
+-   GPA is the sole learning outcome indicator in this study, yet it may not be fully comparable across programmes or course structures. Future research should consider additional outcome measures (such as standardised assessments, course difficulty indicators, credits attempted, or learning engagement metrics) to reduce subjectivity and improve comparability.
+-   Longitudinal designs can track same students over time to examine whether changes in time-use and learning perceptions precede GPA improvements, thereby strengthening causal interpretation beyond cross-sectional associations.
 
 By addressing these areas, future research will strengthen the reliability of these insights and enable more nuanced analyses, ultimately supporting more targeted and equitable approaches to improving student learning outcomes.
 
-
 # References and inspiration
 
-- [Dataset of factors affecting learning outcomes of students at the University of Education,Vietnam National University, Hanoi](https://www.sciencedirect.com/science/article/pii/S2352340925001702#bib0001)
-- [Dataset about VNU students](https://data.mendeley.com/datasets/23ppcdbmhc/1)
-- [Visual Multivariate Analysis with Parallel Coordinates Plot](https://r4va.netlify.app/chap15)
-- [How to Make a Diverging Bar Chart in R](https://rfortherestofus.com/2021/10/diverging-bar-chart)
-
-
-
-
-
+-   [Dataset of factors affecting learning outcomes of students at the University of Education,Vietnam National University, Hanoi](https://www.sciencedirect.com/science/article/pii/S2352340925001702#bib0001)
+-   [Dataset about VNU students](https://data.mendeley.com/datasets/23ppcdbmhc/1)
+-   [Visual Multivariate Analysis with Parallel Coordinates Plot](https://r4va.netlify.app/chap15)
+-   [How to Make a Diverging Bar Chart in R](https://rfortherestofus.com/2021/10/diverging-bar-chart)

@@ -25,6 +25,8 @@ website:
           href: HE07.html
         - text: "Hands-on Exercise 8"
           href: HE08.html
+        - text: "Hands-on Exercise 9"
+          href: HE09.html
           
       - text: "Take-Home Exercise"
         menu:

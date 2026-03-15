@@ -34,6 +34,8 @@ website:
           href: TE01.html
         - text: "Take-home Exercise 2"
           href: TE02.html
+        - text: "Take-home Exercise 2 -1"
+          href: TE02-1.html
           
     right:
       - about.qmd

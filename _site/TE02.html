@@ -105,6 +105,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+
+<script src="site_libs/datatables-binding-0.34.0/datatables.js"></script>
+
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+
+<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+
+<script src="site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+
+<link href="site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+
 
 
 <link rel="stylesheet" href="styles.css">
@@ -180,6 +200,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./TE02.html">
  <span class="dropdown-text">Take-home Exercise 2</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./TE02-1.html">
+ <span class="dropdown-text">Take-home Exercise 2 -1</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
@@ -211,20 +235,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#customer-data-preparation" id="toc-customer-data-preparation" class="nav-link" data-scroll-target="#customer-data-preparation">Customer Data Preparation</a></li>
   <li><a href="#transaction-data-preparation" id="toc-transaction-data-preparation" class="nav-link" data-scroll-target="#transaction-data-preparation">Transaction Data Preparation</a></li>
+  <li><a href="#create-final-analysis-dataset" id="toc-create-final-analysis-dataset" class="nav-link" data-scroll-target="#create-final-analysis-dataset">Create final Analysis Dataset</a></li>
   </ul></li>
   <li><a href="#exploratory-data-analysis-eda" id="toc-exploratory-data-analysis-eda" class="nav-link" data-scroll-target="#exploratory-data-analysis-eda">Exploratory Data Analysis (EDA)</a>
   <ul class="collapse">
   <li><a href="#objective-of-eda" id="toc-objective-of-eda" class="nav-link" data-scroll-target="#objective-of-eda">Objective of EDA</a></li>
   <li><a href="#eda-on-customer-level-data" id="toc-eda-on-customer-level-data" class="nav-link" data-scroll-target="#eda-on-customer-level-data">EDA on Customer-Level Data</a></li>
-  <li><a href="#eda-on-transaction-level-data" id="toc-eda-on-transaction-level-data" class="nav-link" data-scroll-target="#eda-on-transaction-level-data">EDA on Transaction-Level Data</a></li>
   </ul></li>
   <li><a href="#comparative-data-analysis-cda" id="toc-comparative-data-analysis-cda" class="nav-link" data-scroll-target="#comparative-data-analysis-cda">Comparative Data Analysis (CDA)</a>
   <ul class="collapse">
   <li><a href="#objective-of-cda" id="toc-objective-of-cda" class="nav-link" data-scroll-target="#objective-of-cda">Objective of CDA</a></li>
   <li><a href="#customer-group-comparisons" id="toc-customer-group-comparisons" class="nav-link" data-scroll-target="#customer-group-comparisons">Customer Group Comparisons</a></li>
-  <li><a href="#transaction-behavior-comparisons" id="toc-transaction-behavior-comparisons" class="nav-link" data-scroll-target="#transaction-behavior-comparisons">Transaction Behavior Comparisons</a></li>
+  <li><a href="#product-ownership" id="toc-product-ownership" class="nav-link" data-scroll-target="#product-ownership">Product Ownership</a></li>
   </ul></li>
-  <li><a href="#shiny-prototype" id="toc-shiny-prototype" class="nav-link" data-scroll-target="#shiny-prototype">Shiny Prototype</a></li>
+  <li><a href="#shiny-prototype" id="toc-shiny-prototype" class="nav-link" data-scroll-target="#shiny-prototype">Shiny Prototype</a>
+  <ul class="collapse">
+  <li><a href="#prototype-module-objective" id="toc-prototype-module-objective" class="nav-link" data-scroll-target="#prototype-module-objective">Prototype module objective</a></li>
+  <li><a href="#prototype-ready-r-code" id="toc-prototype-ready-r-code" class="nav-link" data-scroll-target="#prototype-ready-r-code">Prototype-ready R code</a>
+  <ul class="collapse">
+  <li><a href="#r-packages-required" id="toc-r-packages-required" class="nav-link" data-scroll-target="#r-packages-required">R Packages Required</a></li>
+  <li><a href="#data-preparation-1" id="toc-data-preparation-1" class="nav-link" data-scroll-target="#data-preparation-1">Data Preparation</a></li>
+  <li><a href="#tab-1-r-code" id="toc-tab-1-r-code" class="nav-link" data-scroll-target="#tab-1-r-code">Tab 1 R code</a></li>
+  <li><a href="#tab-2-r-code" id="toc-tab-2-r-code" class="nav-link" data-scroll-target="#tab-2-r-code">Tab 2 R code</a></li>
+  </ul></li>
+  <li><a href="#tested-output-examples" id="toc-tested-output-examples" class="nav-link" data-scroll-target="#tested-output-examples">Tested output examples</a>
+  <ul class="collapse">
+  <li><a href="#tab-1" id="toc-tab-1" class="nav-link" data-scroll-target="#tab-1">Tab 1</a></li>
+  <li><a href="#tab-2" id="toc-tab-2" class="nav-link" data-scroll-target="#tab-2">Tab 2</a></li>
+  </ul></li>
+  <li><a href="#ui-design" id="toc-ui-design" class="nav-link" data-scroll-target="#ui-design">UI design</a>
+  <ul class="collapse">
+  <li><a href="#tab-1-customer-profile-overview" id="toc-tab-1-customer-profile-overview" class="nav-link" data-scroll-target="#tab-1-customer-profile-overview">Tab 1: Customer Profile Overview</a></li>
+  <li><a href="#tab-2-segment-comparison" id="toc-tab-2-segment-comparison" class="nav-link" data-scroll-target="#tab-2-segment-comparison">Tab 2: Segment Comparison</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -257,7 +301,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">March 7, 2026</p>
+      <p class="date-modified">March 15, 2026</p>
     </div>
   </div>
     
@@ -277,7 +321,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="getting-preparation" class="level1">
 <h1>Getting Preparation</h1>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse, skimr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse, skimr, scales, corrplot, DT, janitor, forcats, patchwork)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="importing-data" class="level1">
@@ -332,76 +376,133 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>customer_clean <span class="ot">&lt;-</span> customer_raw <span class="sc">%&gt;%</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert date columns</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">first_tx =</span> <span class="fu">ymd</span>(first_tx),</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">last_tx =</span> <span class="fu">ymd</span>(last_tx),</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">last_survey_date =</span> <span class="fu">ymd</span>(last_survey_date),</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">last_transaction_date =</span> <span class="fu">ymd</span>(last_transaction_date),</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">first_transaction_date =</span> <span class="fu">ymd</span>(first_transaction_date),</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert categorical variables</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">gender =</span> <span class="fu">as.factor</span>(gender),</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">location =</span> <span class="fu">as.factor</span>(location),</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">income_bracket =</span> <span class="fu">factor</span>(income_bracket, <span class="at">ordered =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">occupation =</span> <span class="fu">as.factor</span>(occupation),</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">education_level =</span> <span class="fu">factor</span>(education_level, <span class="at">ordered =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">marital_status =</span> <span class="fu">as.factor</span>(marital_status),</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">acquisition_channel =</span> <span class="fu">as.factor</span>(acquisition_channel),</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">customer_segment =</span> <span class="fu">as.factor</span>(customer_segment),</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">clv_segment =</span> <span class="fu">factor</span>(clv_segment, <span class="at">ordered =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">feedback_sentiment =</span> <span class="fu">as.factor</span>(feedback_sentiment),</span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">preferred_transaction_type =</span> <span class="fu">as.factor</span>(preferred_transaction_type),</span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert logical / yes-no style fields</span></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">savings_account =</span> <span class="fu">as.factor</span>(savings_account),</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">credit_card =</span> <span class="fu">as.factor</span>(credit_card),</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">personal_loan =</span> <span class="fu">as.factor</span>(personal_loan),</span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">investment_account =</span> <span class="fu">as.factor</span>(investment_account),</span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">insurance_product =</span> <span class="fu">as.factor</span>(insurance_product),</span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">bill_payment_user =</span> <span class="fu">as.factor</span>(bill_payment_user),</span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">auto_savings_enabled =</span> <span class="fu">as.factor</span>(auto_savings_enabled),</span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Handle missing categorical values</span></span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">complaint_topics =</span> <span class="fu">fct_explicit_na</span>(<span class="fu">as.factor</span>(complaint_topics),</span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>                                       <span class="at">na_level =</span> <span class="st">"No Complaint / Missing"</span>),</span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">feature_requests =</span> <span class="fu">fct_explicit_na</span>(<span class="fu">as.factor</span>(feature_requests),</span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>                                       <span class="at">na_level =</span> <span class="st">"No Request / Missing"</span>)</span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Derived variables</span></span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">churn_group =</span> <span class="fu">case_when</span>(</span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>      churn_probability <span class="sc">&lt;</span> <span class="fl">0.20</span> <span class="sc">~</span> <span class="st">"Low"</span>,</span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>      churn_probability <span class="sc">&lt;</span> <span class="fl">0.40</span> <span class="sc">~</span> <span class="st">"Medium"</span>,</span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"High"</span></span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">churn_group =</span> <span class="fu">factor</span>(churn_group,</span>
-<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>                         <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Low"</span>, <span class="st">"Medium"</span>, <span class="st">"High"</span>),</span>
-<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>                         <span class="at">ordered =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">clv_group =</span> <span class="fu">ntile</span>(customer_lifetime_value, <span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>      <span class="fu">factor</span>(<span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,</span>
-<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>             <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Low CLV"</span>, <span class="st">"Medium CLV"</span>, <span class="st">"High CLV"</span>),</span>
-<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>             <span class="at">ordered =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">activity_group =</span> <span class="fu">ntile</span>(app_logins_frequency, <span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>      <span class="fu">factor</span>(<span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,</span>
-<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>             <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Low Activity"</span>, <span class="st">"Medium Activity"</span>, <span class="st">"High Activity"</span>),</span>
-<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a>             <span class="at">ordered =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">tenure_bucket =</span> <span class="fu">case_when</span>(</span>
-<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>      customer_tenure <span class="sc">&lt;</span> <span class="dv">6</span> <span class="sc">~</span> <span class="st">"New"</span>,</span>
-<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a>      customer_tenure <span class="sc">&lt;</span> <span class="dv">18</span> <span class="sc">~</span> <span class="st">"Growing"</span>,</span>
-<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Mature"</span></span>
-<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a>    <span class="at">tenure_bucket =</span> <span class="fu">factor</span>(tenure_bucket,</span>
-<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a>                           <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"New"</span>, <span class="st">"Growing"</span>, <span class="st">"Mature"</span>),</span>
-<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>                           <span class="at">ordered =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>    <span class="at">complaint_flag =</span> <span class="fu">if_else</span>(complaint_topics <span class="sc">==</span> <span class="st">"No Complaint / Missing"</span>, <span class="st">"No"</span>, <span class="st">"Yes"</span>),</span>
-<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a>    <span class="at">request_flag =</span> <span class="fu">if_else</span>(feature_requests <span class="sc">==</span> <span class="st">"No Request / Missing"</span>, <span class="st">"No"</span>, <span class="st">"Yes"</span>)</span>
-<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># clean-customer-data</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>customer_clean <span class="ot">&lt;-</span> customer_raw <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert date columns</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">first_tx =</span> <span class="fu">ymd</span>(first_tx),</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">last_tx =</span> <span class="fu">ymd</span>(last_tx),</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">last_survey_date =</span> <span class="fu">ymd</span>(last_survey_date),</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">last_transaction_date =</span> <span class="fu">ymd</span>(last_transaction_date),</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">first_transaction_date =</span> <span class="fu">ymd</span>(first_transaction_date),</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert categorical variables</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">gender =</span> <span class="fu">as.factor</span>(gender),</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">location =</span> <span class="fu">as.factor</span>(location),</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">income_bracket =</span> <span class="fu">factor</span>(income_bracket, <span class="at">ordered =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">occupation =</span> <span class="fu">as.factor</span>(occupation),</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">education_level =</span> <span class="fu">factor</span>(education_level, <span class="at">ordered =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">marital_status =</span> <span class="fu">as.factor</span>(marital_status),</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">acquisition_channel =</span> <span class="fu">as.factor</span>(acquisition_channel),</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">customer_segment =</span> <span class="fu">as.factor</span>(customer_segment),</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">clv_segment =</span> <span class="fu">factor</span>(clv_segment, <span class="at">ordered =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">feedback_sentiment =</span> <span class="fu">as.factor</span>(feedback_sentiment),</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">preferred_transaction_type =</span> <span class="fu">as.factor</span>(preferred_transaction_type),</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert product ownership fields to numeric 0/1</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">savings_account =</span> <span class="fu">case_when</span>(</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.character</span>(savings_account) <span class="sc">==</span> <span class="st">"TRUE"</span>  <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.character</span>(savings_account) <span class="sc">==</span> <span class="st">"FALSE"</span> <span class="sc">~</span> <span class="dv">0</span>,</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_real_</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">credit_card =</span> <span class="fu">case_when</span>(</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.character</span>(credit_card) <span class="sc">==</span> <span class="st">"TRUE"</span>  <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.character</span>(credit_card) <span class="sc">==</span> <span class="st">"FALSE"</span> <span class="sc">~</span> <span class="dv">0</span>,</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_real_</span></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">personal_loan =</span> <span class="fu">case_when</span>(</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.character</span>(personal_loan) <span class="sc">==</span> <span class="st">"TRUE"</span>  <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.character</span>(personal_loan) <span class="sc">==</span> <span class="st">"FALSE"</span> <span class="sc">~</span> <span class="dv">0</span>,</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_real_</span></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">investment_account =</span> <span class="fu">case_when</span>(</span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.character</span>(investment_account) <span class="sc">==</span> <span class="st">"TRUE"</span>  <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.character</span>(investment_account) <span class="sc">==</span> <span class="st">"FALSE"</span> <span class="sc">~</span> <span class="dv">0</span>,</span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_real_</span></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">insurance_product =</span> <span class="fu">case_when</span>(</span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.character</span>(insurance_product) <span class="sc">==</span> <span class="st">"TRUE"</span>  <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.character</span>(insurance_product) <span class="sc">==</span> <span class="st">"FALSE"</span> <span class="sc">~</span> <span class="dv">0</span>,</span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_real_</span></span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">bill_payment_user =</span> <span class="fu">case_when</span>(</span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.character</span>(bill_payment_user) <span class="sc">==</span> <span class="st">"TRUE"</span>  <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.character</span>(bill_payment_user) <span class="sc">==</span> <span class="st">"FALSE"</span> <span class="sc">~</span> <span class="dv">0</span>,</span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_real_</span></span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">auto_savings_enabled =</span> <span class="fu">case_when</span>(</span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.character</span>(auto_savings_enabled) <span class="sc">==</span> <span class="st">"TRUE"</span>  <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.character</span>(auto_savings_enabled) <span class="sc">==</span> <span class="st">"FALSE"</span> <span class="sc">~</span> <span class="dv">0</span>,</span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_real_</span></span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Handle missing categorical values</span></span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a>    <span class="at">complaint_topics =</span> <span class="fu">fct_explicit_na</span>(<span class="fu">as.factor</span>(complaint_topics),</span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a>                                       <span class="at">na_level =</span> <span class="st">"No Complaint / Missing"</span>),</span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a>    <span class="at">feature_requests =</span> <span class="fu">fct_explicit_na</span>(<span class="fu">as.factor</span>(feature_requests),</span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>                                       <span class="at">na_level =</span> <span class="st">"No Request / Missing"</span>)</span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Derived variables</span></span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a>    <span class="at">churn_group =</span> <span class="fu">case_when</span>(</span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a>      churn_probability <span class="sc">&lt;</span> <span class="fl">0.20</span> <span class="sc">~</span> <span class="st">"Low"</span>,</span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a>      churn_probability <span class="sc">&lt;</span> <span class="fl">0.40</span> <span class="sc">~</span> <span class="st">"Medium"</span>,</span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"High"</span></span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a>    <span class="at">churn_group =</span> <span class="fu">factor</span>(churn_group,</span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a>                         <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Low"</span>, <span class="st">"Medium"</span>, <span class="st">"High"</span>),</span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a>                         <span class="at">ordered =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a>    <span class="at">clv_group =</span> <span class="fu">ntile</span>(customer_lifetime_value, <span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a>      <span class="fu">factor</span>(<span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,</span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a>             <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Low CLV"</span>, <span class="st">"Medium CLV"</span>, <span class="st">"High CLV"</span>),</span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a>             <span class="at">ordered =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a>    <span class="at">activity_group =</span> <span class="fu">ntile</span>(app_logins_frequency, <span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a>      <span class="fu">factor</span>(<span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,</span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a>             <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Low Activity"</span>, <span class="st">"Medium Activity"</span>, <span class="st">"High Activity"</span>),</span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a>             <span class="at">ordered =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a>    <span class="at">tenure_bucket =</span> <span class="fu">case_when</span>(</span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a>      customer_tenure <span class="sc">&lt;</span> <span class="dv">6</span> <span class="sc">~</span> <span class="st">"New"</span>,</span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a>      customer_tenure <span class="sc">&lt;</span> <span class="dv">18</span> <span class="sc">~</span> <span class="st">"Growing"</span>,</span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Mature"</span></span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a>    <span class="at">tenure_bucket =</span> <span class="fu">factor</span>(tenure_bucket,</span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a>                           <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"New"</span>, <span class="st">"Growing"</span>, <span class="st">"Mature"</span>),</span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a>                           <span class="at">ordered =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a>    <span class="at">complaint_flag =</span> <span class="fu">if_else</span>(complaint_topics <span class="sc">==</span> <span class="st">"No Complaint / Missing"</span>, <span class="st">"No"</span>, <span class="st">"Yes"</span>),</span>
+<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a>    <span class="at">request_flag =</span> <span class="fu">if_else</span>(feature_requests <span class="sc">==</span> <span class="st">"No Request / Missing"</span>, <span class="st">"No"</span>, <span class="st">"Yes"</span>),</span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Add age group for later EDA/CDA</span></span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a>    <span class="at">age_group =</span> <span class="fu">case_when</span>(</span>
+<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a>      age <span class="sc">&lt;</span> <span class="dv">25</span> <span class="sc">~</span> <span class="st">"&lt;25"</span>,</span>
+<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a>      age <span class="sc">&gt;=</span> <span class="dv">25</span> <span class="sc">&amp;</span> age <span class="sc">&lt;=</span> <span class="dv">34</span> <span class="sc">~</span> <span class="st">"25-34"</span>,</span>
+<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a>      age <span class="sc">&gt;=</span> <span class="dv">35</span> <span class="sc">&amp;</span> age <span class="sc">&lt;=</span> <span class="dv">44</span> <span class="sc">~</span> <span class="st">"35-44"</span>,</span>
+<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a>      age <span class="sc">&gt;=</span> <span class="dv">45</span> <span class="sc">&amp;</span> age <span class="sc">&lt;=</span> <span class="dv">54</span> <span class="sc">~</span> <span class="st">"45-54"</span>,</span>
+<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a>      age <span class="sc">&gt;=</span> <span class="dv">55</span> <span class="sc">~</span> <span class="st">"55+"</span>,</span>
+<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_character_</span></span>
+<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a>    <span class="at">age_group =</span> <span class="fu">factor</span>(</span>
+<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a>      age_group,</span>
+<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"&lt;25"</span>, <span class="st">"25-34"</span>, <span class="st">"35-44"</span>, <span class="st">"45-54"</span>, <span class="st">"55+"</span>),</span>
+<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a>      <span class="at">ordered =</span> <span class="cn">TRUE</span></span>
+<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Count number of products owned</span></span>
+<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_products_5 =</span> <span class="fu">rowSums</span>(</span>
+<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a>      <span class="fu">pick</span>(</span>
+<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a>        savings_account,</span>
+<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a>        credit_card,</span>
+<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a>        personal_loan,</span>
+<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a>        investment_account,</span>
+<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a>        insurance_product</span>
+<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a>      <span class="at">na.rm =</span> <span class="cn">TRUE</span></span>
+<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>customer_clean <span class="sc">%&gt;%</span></span>
@@ -421,7 +522,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Number of columns</td>
-<td style="text-align: left;">29</td>
+<td style="text-align: left;">37</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">_______________________</td>
@@ -433,7 +534,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td style="text-align: left;">numeric</td>
-<td style="text-align: left;">29</td>
+<td style="text-align: left;">37</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">________________________</td>
@@ -516,6 +617,71 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: left;">▇▅▂▁▁</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">savings_account</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.79</td>
+<td style="text-align: right;">4.100000e-01</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.000000e+00</td>
+<td style="text-align: left;">▂▁▁▁▇</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">credit_card</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.63</td>
+<td style="text-align: right;">4.800000e-01</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.000000e+00</td>
+<td style="text-align: left;">▅▁▁▁▇</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">personal_loan</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.32</td>
+<td style="text-align: right;">4.600000e-01</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.000000e+00</td>
+<td style="text-align: left;">▇▁▁▁▃</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">investment_account</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.43</td>
+<td style="text-align: right;">4.900000e-01</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.000000e+00</td>
+<td style="text-align: left;">▇▁▁▁▆</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">insurance_product</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.21</td>
+<td style="text-align: right;">4.100000e-01</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.000000e+00</td>
+<td style="text-align: left;">▇▁▁▁▂</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">active_products</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -528,7 +694,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">5.000000e+00</td>
 <td style="text-align: left;">▇▆▃▂▁</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">app_logins_frequency</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -541,7 +707,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">1.000000e+02</td>
 <td style="text-align: left;">▇▅▁▁▁</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">feature_usage_diversity</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -554,7 +720,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">1.000000e+01</td>
 <td style="text-align: left;">▇▅▂▁▁</td>
 </tr>
+<tr class="even">
+<td style="text-align: left;">bill_payment_user</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.70</td>
+<td style="text-align: right;">4.600000e-01</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.000000e+00</td>
+<td style="text-align: left;">▃▁▁▁▇</td>
+</tr>
 <tr class="odd">
+<td style="text-align: left;">auto_savings_enabled</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.40</td>
+<td style="text-align: right;">4.900000e-01</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.000000e+00</td>
+<td style="text-align: left;">▇▁▁▁▆</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">credit_utilization_ratio</td>
 <td style="text-align: right;">18263</td>
 <td style="text-align: right;">0.63</td>
@@ -567,7 +759,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">9.400000e-01</td>
 <td style="text-align: left;">▆▇▅▁▁</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">international_transactions</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -580,7 +772,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">6.000000e+00</td>
 <td style="text-align: left;">▇▁▁▁▁</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">failed_transactions</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -593,7 +785,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">4.000000e+00</td>
 <td style="text-align: left;">▇▂▁▁▁</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">tx_count</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -606,7 +798,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">7.746500e+04</td>
 <td style="text-align: left;">▇▁▁▁▁</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">avg_tx_value</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -619,7 +811,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">5.167030e+07</td>
 <td style="text-align: left;">▇▁▁▁▁</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">total_tx_volume</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -632,7 +824,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">1.073087e+12</td>
 <td style="text-align: left;">▇▁▁▁▁</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">base_satisfaction</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -645,7 +837,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">1.194000e+01</td>
 <td style="text-align: left;">▁▃▇▂▁</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">tx_satisfaction</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -658,7 +850,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">1.000000e+00</td>
 <td style="text-align: left;">▇▁▁▁▁</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">product_satisfaction</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -671,7 +863,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">1.000000e+00</td>
 <td style="text-align: left;">▆▇▇▃▁</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">satisfaction_score</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -684,7 +876,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">6.000000e+00</td>
 <td style="text-align: left;">▁▁▇▃▁</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">nps_score</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -697,7 +889,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">2.300000e+01</td>
 <td style="text-align: left;">▁▂▇▃▁</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">support_tickets_count</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -710,7 +902,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">7.000000e+00</td>
 <td style="text-align: left;">▇▂▁▁▁</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">resolved_tickets_ratio</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -723,7 +915,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">1.000000e+00</td>
 <td style="text-align: left;">▇▁▁▁▇</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">app_store_rating</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -736,7 +928,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">5.000000e+00</td>
 <td style="text-align: left;">▁▁▃▆▇</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">monthly_transaction_count</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -749,7 +941,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">6.455420e+03</td>
 <td style="text-align: left;">▇▁▁▁▁</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">average_transaction_value</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -762,7 +954,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">5.167030e+07</td>
 <td style="text-align: left;">▇▁▁▁▁</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">total_transaction_volume</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -775,7 +967,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">1.073087e+12</td>
 <td style="text-align: left;">▇▁▁▁▁</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">transaction_frequency</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -788,7 +980,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">2.157800e+02</td>
 <td style="text-align: left;">▇▁▁▁▁</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">weekend_transaction_ratio</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -801,7 +993,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">9.100000e-01</td>
 <td style="text-align: left;">▂▇▂▁▁</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">avg_daily_transactions</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -814,7 +1006,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">2.157800e+02</td>
 <td style="text-align: left;">▇▁▁▁▁</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">customer_tenure</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -827,7 +1019,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">1.197000e+01</td>
 <td style="text-align: left;">▁▁▁▁▇</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">churn_probability</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -840,7 +1032,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">5.000000e-01</td>
 <td style="text-align: left;">▁▂▆▇▂</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">customer_lifetime_value</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -852,6 +1044,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">297355900.21</td>
 <td style="text-align: right;">1.776860e+10</td>
 <td style="text-align: left;">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">total_products_5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2.37</td>
+<td style="text-align: right;">1.170000e+00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: right;">3.00</td>
+<td style="text-align: right;">5.000000e+00</td>
+<td style="text-align: left;">▆▇▇▃▁</td>
 </tr>
 </tbody>
 </table>
@@ -878,6 +1083,148 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 4 type                    0</code></pre>
 </div>
 </div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check whether each customer_id in transaction_csv can be found in customer_csv</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">all</span>(transaction_raw<span class="sc">$</span>customer_id <span class="sc">%in%</span> customer_clean<span class="sc">$</span>customer_id)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+<p>The result states every customer_id in transaction data can be found in customer data.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># clean-transaction-data</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>transaction_clean <span class="ot">&lt;-</span> transaction_raw <span class="sc">%&gt;%</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">transaction_date =</span> <span class="fu">ymd</span>(date),</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">transaction_day =</span> <span class="fu">as_date</span>(transaction_date),</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">transaction_month =</span> <span class="fu">floor_date</span>(transaction_day, <span class="at">unit =</span> <span class="st">"month"</span>),</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">transaction_weekday =</span> <span class="fu">wday</span>(transaction_day, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>),</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">transaction_hour =</span> <span class="fu">hour</span>(transaction_date),</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">is_weekend =</span> <span class="fu">if_else</span>(transaction_weekday <span class="sc">%in%</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(<span class="st">"Saturday"</span>, <span class="st">"Sunday"</span>), <span class="st">"Weekend"</span>, <span class="st">"Weekday"</span>),</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">transaction_type =</span> <span class="fu">as.factor</span>(type)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>()</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="co"># key matching</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>transaction_clean <span class="sc">%&gt;%</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(customer_clean, <span class="at">by =</span> <span class="st">"customer_id"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">unmatched_customer_ids =</span> <span class="fu">n_distinct</span>(customer_id))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  unmatched_customer_ids
+                   &lt;int&gt;
+1                      0</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># aggregate transaction into customer level</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>customer_tx_summary <span class="ot">&lt;-</span> transaction_clean <span class="sc">%&gt;%</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(customer_id) <span class="sc">%&gt;%</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_transactions =</span> <span class="fu">n</span>(),</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">active_transaction_days =</span> <span class="fu">n_distinct</span>(transaction_day),</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_transaction_amount =</span> <span class="fu">sum</span>(amount, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_transaction_amount =</span> <span class="fu">mean</span>(amount, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_transaction_amount =</span> <span class="fu">median</span>(amount, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_transaction_amount =</span> <span class="fu">max</span>(amount, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">unique_transaction_types =</span> <span class="fu">n_distinct</span>(transaction_type),</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="create-final-analysis-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="create-final-analysis-dataset">Create final Analysis Dataset</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>analysis_data <span class="ot">&lt;-</span> customer_clean <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(customer_tx_summary, <span class="at">by =</span> <span class="st">"customer_id"</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(analysis_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 48,723
+Columns: 69
+$ customer_id                &lt;dbl&gt; 93716481, 49020929, 52690950, 23199751, 619…
+$ age                        &lt;dbl&gt; 44, 44, 45, 45, 44, 45, 44, 44, 45, 44, 44,…
+$ gender                     &lt;fct&gt; Male, Male, Male, Male, Female, Female, Mal…
+$ location                   &lt;fct&gt; "Pereira, Risaralda", "Cali, Valle del Cauc…
+$ income_bracket             &lt;ord&gt; Very High, Medium, High, High, Medium, Medi…
+$ occupation                 &lt;fct&gt; Engineer, Construction Worker, Construction…
+$ education_level            &lt;ord&gt; Master, Bachelor, Bachelor, High School, Ba…
+$ marital_status             &lt;fct&gt; Married, Married, Married, Single, Married,…
+$ household_size             &lt;dbl&gt; 5, 2, 4, 2, 3, 4, 4, 3, 1, 3, 5, 3, 3, 7, 3…
+$ acquisition_channel        &lt;fct&gt; Partnership, Paid Ad, Paid Ad, Referral, Pa…
+$ customer_segment           &lt;fct&gt; occasional, regular, inactive, inactive, po…
+$ savings_account            &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1…
+$ credit_card                &lt;dbl&gt; 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1…
+$ personal_loan              &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0…
+$ investment_account         &lt;dbl&gt; 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0…
+$ insurance_product          &lt;dbl&gt; 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1…
+$ active_products            &lt;dbl&gt; 1, 5, 3, 2, 1, 1, 1, 4, 2, 3, 1, 5, 3, 1, 1…
+$ app_logins_frequency       &lt;dbl&gt; 15, 30, 4, 15, 19, 15, 44, 22, 7, 11, 7, 30…
+$ feature_usage_diversity    &lt;dbl&gt; 3, 0, 4, 4, 1, 4, 6, 1, 1, 6, 3, 1, 2, 1, 3…
+$ bill_payment_user          &lt;dbl&gt; 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1…
+$ auto_savings_enabled       &lt;dbl&gt; 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0…
+$ credit_utilization_ratio   &lt;dbl&gt; 0.17871029, NA, NA, NA, 0.40360553, 0.07786…
+$ international_transactions &lt;dbl&gt; 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0…
+$ failed_transactions        &lt;dbl&gt; 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0…
+$ tx_count                   &lt;dbl&gt; 76, 10, 10, 23, 18, 15, 24, 45, 134, 13, 18…
+$ avg_tx_value               &lt;dbl&gt; 1679872.4, 5445810.0, 640335.0, 660180.4, 1…
+$ total_tx_volume            &lt;dbl&gt; 127670300, 54458100, 6403350, 15184150, 262…
+$ first_tx                   &lt;date&gt; 2023-01-05, 2023-02-05, 2023-01-31, 2023-0…
+$ last_tx                    &lt;date&gt; 2023-12-25, 2023-12-20, 2023-12-12, 2023-1…
+$ base_satisfaction          &lt;dbl&gt; 9.213372, 6.073093, 8.198643, 7.529577, 6.6…
+$ tx_satisfaction            &lt;dbl&gt; 0.380, 0.050, 0.050, 0.115, 0.090, 0.075, 0…
+$ product_satisfaction       &lt;dbl&gt; 0.6, 0.2, 0.6, 0.4, 0.4, 0.6, 0.4, 0.4, 0.6…
+$ satisfaction_score         &lt;dbl&gt; 5, 3, 4, 4, 3, 4, 4, 4, 5, 4, 4, 5, 4, 3, 4…
+$ nps_score                  &lt;dbl&gt; -7, -46, -29, -31, -47, -29, -34, -36, -4, …
+$ last_survey_date           &lt;date&gt; 2023-12-16, 2023-05-05, 2023-11-16, 2023-0…
+$ support_tickets_count      &lt;dbl&gt; 1, 1, 0, 2, 2, 1, 1, 0, 2, 0, 0, 2, 3, 1, 0…
+$ resolved_tickets_ratio     &lt;dbl&gt; 0.0000000, 1.0000000, 0.0000000, 0.5000000,…
+$ app_store_rating           &lt;dbl&gt; 3.5, 4.0, 5.0, 4.5, 4.0, 4.0, 5.0, 4.5, 4.5…
+$ feedback_sentiment         &lt;fct&gt; Neutral, Positive, Positive, Positive, Posi…
+$ feature_requests           &lt;fct&gt; "Budgeting tools", "No Request / Missing", …
+$ complaint_topics           &lt;fct&gt; No Complaint / Missing, No Complaint / Miss…
+$ clv_segment                &lt;ord&gt; Gold, Bronze, Gold, Bronze, Gold, Bronze, B…
+$ monthly_transaction_count  &lt;dbl&gt; 1.428571, 1.571429, 2.500000, 1.555556, 2.1…
+$ average_transaction_value  &lt;dbl&gt; 6054025.0, 2127413.6, 3575915.0, 1513353.6,…
+$ total_transaction_volume   &lt;dbl&gt; 60540250, 23401550, 35759150, 21186950, 116…
+$ transaction_frequency      &lt;dbl&gt; 0.03076923, 0.03293413, 0.05000000, 0.04778…
+$ last_transaction_date      &lt;date&gt; 2023-12-05, 2023-12-18, 2023-10-27, 2023-1…
+$ preferred_transaction_type &lt;fct&gt; Transfer, Transfer, Transfer, Transfer, Pay…
+$ first_transaction_date     &lt;date&gt; 2023-01-05, 2023-02-05, 2023-01-31, 2023-0…
+$ weekend_transaction_ratio  &lt;dbl&gt; 0.30000000, 0.18181818, 0.30000000, 0.14285…
+$ avg_daily_transactions     &lt;dbl&gt; 0.03076923, 0.03293413, 0.05000000, 0.04778…
+$ customer_tenure            &lt;dbl&gt; 11.633333, 11.500000, 8.766667, 10.733333, …
+$ churn_probability          &lt;dbl&gt; 0.3622688, 0.1817896, 0.3212651, 0.3366287,…
+$ customer_lifetime_value    &lt;dbl&gt; 312414808, 167022286, 19403711, 35978105, 3…
+$ churn_group                &lt;ord&gt; Medium, Low, Medium, Medium, Medium, Medium…
+$ clv_group                  &lt;ord&gt; High CLV, Medium CLV, Low CLV, Low CLV, Hig…
+$ activity_group             &lt;ord&gt; Low Activity, High Activity, Low Activity, …
+$ tenure_bucket              &lt;ord&gt; Growing, Growing, Growing, Growing, Growing…
+$ complaint_flag             &lt;chr&gt; "No", "No", "No", "No", "Yes", "No", "No", …
+$ request_flag               &lt;chr&gt; "Yes", "No", "No", "Yes", "Yes", "Yes", "No…
+$ age_group                  &lt;ord&gt; 35-44, 35-44, 45-54, 45-54, 35-44, 45-54, 3…
+$ total_products_5           &lt;dbl&gt; 3, 1, 3, 2, 2, 3, 2, 2, 3, 4, 3, 1, 3, 3, 3…
+$ total_transactions         &lt;int&gt; 76, 10, 10, 23, 18, 15, 24, 45, 134, 13, 18…
+$ active_transaction_days    &lt;int&gt; 71, 10, 10, 22, 18, 14, 24, 43, 111, 13, 17…
+$ total_transaction_amount   &lt;dbl&gt; 127670300, 54458100, 6403350, 15184150, 262…
+$ avg_transaction_amount     &lt;dbl&gt; 1679872.4, 5445810.0, 640335.0, 660180.4, 1…
+$ median_transaction_amount  &lt;dbl&gt; 1260000, 4520975, 496200, 557700, 10886275,…
+$ max_transaction_amount     &lt;dbl&gt; 7068550, 16129100, 1663650, 1314900, 422420…
+$ unique_transaction_types   &lt;int&gt; 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 4, 4, 4, 4, 3…</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>analysis_data <span class="sc">%&gt;%</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_rows =</span> <span class="fu">n</span>(),</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">unique_customers =</span> <span class="fu">n_distinct</span>(customer_id)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  total_rows unique_customers
+       &lt;int&gt;            &lt;int&gt;
+1      48723            48723</code></pre>
+</div>
+</div>
 </section>
 </section>
 <section id="exploratory-data-analysis-eda" class="level1">
@@ -885,14 +1232,185 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="objective-of-eda" class="level2">
 <h2 class="anchored" data-anchor-id="objective-of-eda">Objective of EDA</h2>
 <p>The purpose of Exploratory Data Analysis (EDA) in this exercise is to understand the overall structure, quality, and distribution of the available data before building the Shiny prototype. EDA helps identify the main characteristics of customers and transactions, detect unusual patterns or potential data issues, and highlight variables that are most suitable for interactive visualization.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable group and age broken creation</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>personal_vars <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"age"</span>, <span class="st">"gender"</span>, <span class="st">"income_bracket"</span>, <span class="st">"occupation"</span>,</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"education_level"</span>, <span class="st">"marital_status"</span>,</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"household_size"</span>, <span class="st">"customer_segment"</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>product_vars <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"savings_account"</span>, <span class="st">"credit_card"</span>, <span class="st">"personal_loan"</span>,</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"investment_account"</span>, <span class="st">"insurance_product"</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="eda-on-customer-level-data" class="level2">
 <h2 class="anchored" data-anchor-id="eda-on-customer-level-data">EDA on Customer-Level Data</h2>
 <p>Customer-level EDA focuses on understanding the distribution of customer attributes such as demographics, product adoption, engagement, satisfaction, and business outcomes. This includes examining variables such as age, gender, location, income bracket, customer segment, number of active products, app usage, satisfaction score, NPS, churn probability, and customer lifetime value. The goal is to reveal the overall composition of the customer base and identify key patterns worth further comparison.</p>
-</section>
-<section id="eda-on-transaction-level-data" class="level2">
-<h2 class="anchored" data-anchor-id="eda-on-transaction-level-data">EDA on Transaction-Level Data</h2>
-<p>Transaction-level EDA focuses on the behavioral side of the data. This includes exploring transaction frequency, transaction amount distributions, transaction categories, time-based patterns, and transaction status. Depending on the available fields, the analysis may also examine daily, weekly, or monthly transaction trends, differences between weekday and weekend behavior, and the prevalence of failed or international transactions. This helps provide a more detailed understanding of how customers interact with fintech services.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(analysis_data, <span class="fu">aes</span>(<span class="at">x =</span> age_group)) <span class="sc">+</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"#4E79A7"</span>) <span class="sc">+</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Customer Distribution by Age Group"</span>,</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Age Group"</span>,</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Count"</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE02_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Finding 1: Customers are most concentrated in the 25–34 and 55+ age groups, while the 35–44 and 45–54 groups are comparatively smaller.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Common EDA fuction for variables</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>plot_categorical_dist <span class="ot">&lt;-</span> <span class="cf">function</span>(data, var_name, <span class="at">top_n =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">count</span>(.data[[var_name]], <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">category =</span> <span class="dv">1</span>, <span class="at">n =</span> n) <span class="sc">%&gt;%</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">category =</span> <span class="fu">as.character</span>(category))</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(top_n)) {</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">slice_head</span>(<span class="at">n =</span> top_n)</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_reorder</span>(category, n), <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"#4E79A7"</span>) <span class="sc">+</span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Distribution of"</span>, var_name),</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> var_name,</span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Count"</span></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_categorical_dist</span>(analysis_data, <span class="st">"gender"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE02_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Finding 2: The customer base is almost evenly split between male and female users, while the “Other” category represents only a very small share.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_categorical_dist</span>(analysis_data, <span class="st">"income_bracket"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE02_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Finding 3: Most customers fall within the medium and low income brackets, while very high-income customers form the smallest segment.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_categorical_dist</span>(analysis_data, <span class="st">"education_level"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE02_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Finding 4: Customers are primarily concentrated in Bachelor’s and High School education levels, with fewer users holding Master’s or PhD qualifications.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_categorical_dist</span>(analysis_data, <span class="st">"marital_status"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE02_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Finding 5: Single and married customers make up the majority of the customer base, while divorced and widowed groups are much smaller.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_categorical_dist</span>(analysis_data, <span class="st">"customer_segment"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE02_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Finding 6: Occasional users form the largest segment, followed by regular users, while power users account for the smallest share.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_categorical_dist</span>(analysis_data, <span class="st">"occupation"</span>, <span class="at">top_n =</span> <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE02_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Finding 7: The occupational distribution is relatively balanced across the listed professions, with no single occupation dominating the customer base.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Household_size</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(analysis_data, <span class="fu">aes</span>(<span class="at">x =</span> household_size)) <span class="sc">+</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"#4E79A7"</span>) <span class="sc">+</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Distribution of Household Size"</span>,</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Household Size"</span>,</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Count"</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE02_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Finding 8: Most customers come from households of around 2 to 5 members, with larger household sizes becoming increasingly rare.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># product ownership</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>product_ownership <span class="ot">&lt;-</span> analysis_data <span class="sc">%&gt;%</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">all_of</span>(product_vars)) <span class="sc">%&gt;%</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">everything</span>(),</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"product"</span>,</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"has_product"</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(product) <span class="sc">%&gt;%</span></span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">ownership_rate =</span> <span class="fu">mean</span>(has_product, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">count =</span> <span class="fu">sum</span>(has_product, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">product =</span> <span class="fu">fct_reorder</span>(product, ownership_rate))</span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(product_ownership, <span class="fu">aes</span>(<span class="at">x =</span> product, <span class="at">y =</span> ownership_rate)) <span class="sc">+</span></span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"#4E79A7"</span>) <span class="sc">+</span></span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> percent) <span class="sc">+</span></span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Product Ownership Rate"</span>,</span>
+<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Product"</span>,</span>
+<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Ownership Rate"</span></span>
+<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE02_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Finding 9: Most customers come from households of around 2 to 5 members, with larger household sizes becoming increasingly rare.</p>
 </section>
 </section>
 <section id="comparative-data-analysis-cda" class="level1">
@@ -904,16 +1422,716 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="customer-group-comparisons" class="level2">
 <h2 class="anchored" data-anchor-id="customer-group-comparisons">Customer Group Comparisons</h2>
 <p>CDA can be used to compare customer groups based on characteristics such as churn risk, customer lifetime value segment, product adoption, engagement level, or demographic attributes. For example, the analysis may compare whether customers with higher churn probability show lower activity, lower satisfaction, fewer active products, or different transaction patterns than lower-risk customers. Similar comparisons can also be made across income groups, customer segments, or geographic locations.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Age group x customer_segment</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>analysis_data <span class="sc">%&gt;%</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(age_group, customer_segment) <span class="sc">%&gt;%</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age_group, <span class="at">y =</span> n, <span class="at">fill =</span> customer_segment)) <span class="sc">+</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> percent) <span class="sc">+</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Customer Segment Composition by Age Group"</span>,</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Age Group"</span>,</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Proportion"</span>,</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Customer Segment"</span></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE02_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Finding 1: Customer segment composition remains broadly similar across age groups, suggesting that age alone does not strongly differentiate segment membership.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Income x gender</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>analysis_data <span class="sc">%&gt;%</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(income_bracket, gender) <span class="sc">%&gt;%</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> income_bracket, <span class="at">y =</span> n, <span class="at">fill =</span> gender)) <span class="sc">+</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> percent) <span class="sc">+</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Gender Composition by Income Bracket"</span>,</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Income Bracket"</span>,</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Proportion"</span>,</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Gender"</span></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">30</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE02_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Finding 2: Gender proportions are highly consistent across income brackets, indicating little visible gender difference in income-group composition.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Education x occupation (top occupation)</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>top_occ <span class="ot">&lt;-</span> analysis_data <span class="sc">%&gt;%</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(occupation, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(occupation)</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>analysis_data <span class="sc">%&gt;%</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(occupation <span class="sc">%in%</span> top_occ) <span class="sc">%&gt;%</span></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(education_level, occupation) <span class="sc">%&gt;%</span></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> education_level, <span class="at">y =</span> occupation, <span class="at">fill =</span> n)) <span class="sc">+</span></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> n), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">"#FDEDEC"</span>, <span class="at">high =</span> <span class="st">"#C0392B"</span>) <span class="sc">+</span></span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Education Level by Occupation"</span>,</span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Education Level"</span>,</span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Occupation"</span>,</span>
+<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Count"</span></span>
+<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">30</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE02_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Finding 3: Across occupations, Bachelor’s and High School levels dominate, while Master’s and PhD holders consistently represent smaller shares.</p>
 </section>
-<section id="transaction-behavior-comparisons" class="level2">
-<h2 class="anchored" data-anchor-id="transaction-behavior-comparisons">Transaction Behavior Comparisons</h2>
-<p>With the inclusion of transaction-level data, CDA can also compare transaction behavior across different customer groups. This may include differences in transaction frequency, average transaction value, failed transaction ratio, use of transaction types, or weekend transaction behavior. These comparisons help connect customer profiles with actual financial behavior, making the analysis more informative and business-relevant.</p>
+<section id="product-ownership" class="level2">
+<h2 class="anchored" data-anchor-id="product-ownership">Product Ownership</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of product owned by each customer</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>analysis_data <span class="ot">&lt;-</span> analysis_data <span class="sc">%&gt;%</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_products_5 =</span> <span class="fu">rowSums</span>(<span class="fu">select</span>(., <span class="fu">all_of</span>(product_vars)), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(analysis_data, <span class="fu">aes</span>(<span class="at">x =</span> total_products_5)) <span class="sc">+</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"#4E79A7"</span>) <span class="sc">+</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Number of Products Owned per Customer"</span>,</span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Number of Products Owned"</span>,</span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Count"</span></span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE02_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Finding 4: Most customers hold between 2 and 3 products, while very few customers have either no products or the full set of five products.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># By Segment</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>analysis_data <span class="sc">%&gt;%</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> customer_segment, <span class="at">y =</span> total_products_5, <span class="at">fill =</span> customer_segment)) <span class="sc">+</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Number of Products Owned by Customer Segment"</span>,</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Customer Segment"</span>,</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Number of Products"</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE02_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Finding 5: Product ownership distribution looks very similar across customer segments, suggesting limited separation by total product count alone.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Most common product combination</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>product_combo <span class="ot">&lt;-</span> analysis_data <span class="sc">%&gt;%</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">product_bundle =</span> <span class="fu">pmap_chr</span>(</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">select</span>(., <span class="fu">all_of</span>(product_vars)),</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>      <span class="cf">function</span>(...) {</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>        vals <span class="ot">&lt;-</span> <span class="fu">c</span>(...)</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>        prods <span class="ot">&lt;-</span> product_vars[<span class="fu">unlist</span>(vals)]</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (<span class="fu">length</span>(prods) <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>          <span class="st">"No Product"</span></span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>        } <span class="cf">else</span> {</span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>          <span class="fu">paste</span>(prods, <span class="at">collapse =</span> <span class="st">" + "</span>)</span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(product_bundle, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a>product_combo <span class="sc">%&gt;%</span></span>
+<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb36-21"><a href="#cb36-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_reorder</span>(product_bundle, n), <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb36-22"><a href="#cb36-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"#4E79A7"</span>) <span class="sc">+</span></span>
+<span id="cb36-23"><a href="#cb36-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb36-24"><a href="#cb36-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb36-25"><a href="#cb36-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Top 10 Most Common Product Bundles"</span>,</span>
+<span id="cb36-26"><a href="#cb36-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Product Bundle"</span>,</span>
+<span id="cb36-27"><a href="#cb36-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Count"</span></span>
+<span id="cb36-28"><a href="#cb36-28" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb36-29"><a href="#cb36-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE02_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Finding 6: The current product bundle output suggests that bundle construction logic should be refined before drawing business conclusions.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Heatmap</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Customer segment × product ownership heatmap</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>analysis_data <span class="sc">%&gt;%</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(customer_segment, <span class="fu">all_of</span>(product_vars)) <span class="sc">%&gt;%</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">all_of</span>(product_vars),</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"product"</span>,</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"has_product"</span></span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(customer_segment, product) <span class="sc">%&gt;%</span></span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">ownership_rate =</span> <span class="fu">mean</span>(has_product, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> product, <span class="at">y =</span> customer_segment, <span class="at">fill =</span> ownership_rate)) <span class="sc">+</span></span>
+<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> scales<span class="sc">::</span><span class="fu">percent</span>(ownership_rate, <span class="at">accuracy =</span> <span class="dv">1</span>)), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">"#EAF2F8"</span>, <span class="at">high =</span> <span class="st">"#1F77B4"</span>, <span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
+<span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb37-21"><a href="#cb37-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Product Ownership by Customer Segment"</span>,</span>
+<span id="cb37-22"><a href="#cb37-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Product"</span>,</span>
+<span id="cb37-23"><a href="#cb37-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Customer Segment"</span>,</span>
+<span id="cb37-24"><a href="#cb37-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Ownership Rate"</span></span>
+<span id="cb37-25"><a href="#cb37-25" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb37-26"><a href="#cb37-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE02_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Finding 7: Product ownership rates are highly similar across customer segments, with savings accounts consistently the most common product and insurance the least common.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Income bracket × product ownership heatmap</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>analysis_data <span class="sc">%&gt;%</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(income_bracket, <span class="fu">all_of</span>(product_vars)) <span class="sc">%&gt;%</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">all_of</span>(product_vars),</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"product"</span>,</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"has_product"</span></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(income_bracket, product) <span class="sc">%&gt;%</span></span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">ownership_rate =</span> <span class="fu">mean</span>(has_product, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> product, <span class="at">y =</span> income_bracket, <span class="at">fill =</span> ownership_rate)) <span class="sc">+</span></span>
+<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> scales<span class="sc">::</span><span class="fu">percent</span>(ownership_rate, <span class="at">accuracy =</span> <span class="dv">1</span>)), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">"#EAF2F8"</span>, <span class="at">high =</span> <span class="st">"#1F77B4"</span>, <span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
+<span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb38-19"><a href="#cb38-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Product Ownership by Income Bracket"</span>,</span>
+<span id="cb38-20"><a href="#cb38-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Product"</span>,</span>
+<span id="cb38-21"><a href="#cb38-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Income Bracket"</span>,</span>
+<span id="cb38-22"><a href="#cb38-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Ownership Rate"</span></span>
+<span id="cb38-23"><a href="#cb38-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb38-24"><a href="#cb38-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE02_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Finding 8: Product ownership generally rises with income level, especially for savings, credit card, and investment products, indicating stronger product penetration among higher-income customers.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Age group × customer segment heatmap</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>analysis_data <span class="sc">%&gt;%</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(age_group, customer_segment) <span class="sc">%&gt;%</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> customer_segment, <span class="at">y =</span> age_group, <span class="at">fill =</span> n)) <span class="sc">+</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> n), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">"#F7FBFF"</span>, <span class="at">high =</span> <span class="st">"#2171B5"</span>) <span class="sc">+</span></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Customer Distribution by Age Group and Segment"</span>,</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Customer Segment"</span>,</span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Age Group"</span>,</span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Count"</span></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE02_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Finding 9: Occasional and regular users dominate across all age groups, while power users remain the smallest segment regardless of age</p>
 </section>
 </section>
 <section id="shiny-prototype" class="level1">
 <h1>Shiny Prototype</h1>
+<section id="prototype-module-objective" class="level2">
+<h2 class="anchored" data-anchor-id="prototype-module-objective">Prototype module objective</h2>
+<p>The objective of this prototype module is to translate the customer-level EDA and CDA results into an interactive Customer Distribution Explorer for the future Shiny application. The module focuses on two core functions: (i) customer profile overview, which allows users to filter target audiences and inspect their demographic and product ownership distributions, and (ii) segment comparison, which allows users to compare selected customer groups across different dimensions and metrics. By moving beyond static charts, this prototype is intended to demonstrate the logic, visual outputs, and interface structure needed to support interactive audience exploration and segment-based analysis.</p>
+</section>
+<section id="prototype-ready-r-code" class="level2">
+<h2 class="anchored" data-anchor-id="prototype-ready-r-code">Prototype-ready R code</h2>
+<section id="r-packages-required" class="level3">
+<h3 class="anchored" data-anchor-id="r-packages-required">R Packages Required</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-da1a96986229f1ed0c8c" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-da1a96986229f1ed0c8c">{"x":{"filter":"none","vertical":false,"caption":"<caption>R Packages Used in the Prototype Module<\/caption>","data":[["tidyverse","dplyr","tidyr","ggplot2","readr","scales","DT"],["Core package collection for data wrangling and visualisation","Filtering, grouping, summarising, and deriving analysis outputs","Reshaping data into long/wide format for heatmaps and tables","Creating bar charts, histograms, and heatmaps","Importing customer data from csv files","Formatting percentages and large numbers for plots and KPI outputs","Creating interactive summary tables for prototype outputs"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Package<\/th>\n      <th>Main Function in Prototype<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":true,"dom":"t","columnDefs":[{"name":"Package","targets":0},{"name":"Main Function in Prototype","targets":1}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="data-preparation-1" class="level3">
+<h3 class="anchored" data-anchor-id="data-preparation-1">Data Preparation</h3>
+<p>The data preparation step will follow “Customer Data Preparation” section in before. ### Filter Function</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>filter_customers <span class="ot">&lt;-</span> <span class="cf">function</span>(data,</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>                             <span class="at">customer_segment =</span> <span class="cn">NULL</span>,</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>                             <span class="at">income_bracket =</span> <span class="cn">NULL</span>,</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>                             <span class="at">age_group =</span> <span class="cn">NULL</span>,</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>                             <span class="at">gender =</span> <span class="cn">NULL</span>,</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>                             <span class="at">marital_status =</span> <span class="cn">NULL</span>,</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>                             <span class="at">selected_products =</span> <span class="cn">NULL</span>,</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>                             <span class="at">min_products =</span> <span class="dv">0</span>) {</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> data</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(customer_segment)) {</span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>    df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(customer_segment <span class="sc">%in%</span> customer_segment)</span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(income_bracket)) {</span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>    df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(income_bracket <span class="sc">%in%</span> income_bracket)</span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(age_group)) {</span>
+<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a>    df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(age_group <span class="sc">%in%</span> age_group)</span>
+<span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb40-24"><a href="#cb40-24" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(gender)) {</span>
+<span id="cb40-25"><a href="#cb40-25" aria-hidden="true" tabindex="-1"></a>    df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(gender <span class="sc">%in%</span> gender)</span>
+<span id="cb40-26"><a href="#cb40-26" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb40-27"><a href="#cb40-27" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb40-28"><a href="#cb40-28" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(marital_status)) {</span>
+<span id="cb40-29"><a href="#cb40-29" aria-hidden="true" tabindex="-1"></a>    df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(marital_status <span class="sc">%in%</span> marital_status)</span>
+<span id="cb40-30"><a href="#cb40-30" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb40-31"><a href="#cb40-31" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb40-32"><a href="#cb40-32" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(selected_products) <span class="sc">&amp;&amp;</span> <span class="fu">length</span>(selected_products) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb40-33"><a href="#cb40-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (p <span class="cf">in</span> selected_products) {</span>
+<span id="cb40-34"><a href="#cb40-34" aria-hidden="true" tabindex="-1"></a>      df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(.data[[p]] <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb40-35"><a href="#cb40-35" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb40-36"><a href="#cb40-36" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb40-37"><a href="#cb40-37" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb40-38"><a href="#cb40-38" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(total_products_5 <span class="sc">&gt;=</span> min_products)</span>
+<span id="cb40-39"><a href="#cb40-39" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb40-40"><a href="#cb40-40" aria-hidden="true" tabindex="-1"></a>  df</span>
+<span id="cb40-41"><a href="#cb40-41" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="tab-1-r-code" class="level3">
+<h3 class="anchored" data-anchor-id="tab-1-r-code">Tab 1 R code</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Customer distribution</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>plot_customer_distribution <span class="ot">&lt;-</span> <span class="cf">function</span>(data, <span class="at">view =</span> <span class="st">"Age"</span>) {</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (view <span class="sc">==</span> <span class="st">"Age"</span>) {</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> age_group)) <span class="sc">+</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"#6d86b3"</span>) <span class="sc">+</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">"Customer Distribution"</span>,</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> <span class="st">"Age Group"</span>,</span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">y =</span> <span class="st">"Count"</span></span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">+</span></span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">theme_minimal</span>()</span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (view <span class="sc">==</span> <span class="st">"Gender"</span>) {</span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> gender)) <span class="sc">+</span></span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"#6d86b3"</span>) <span class="sc">+</span></span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(</span>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">"Customer Distribution"</span>,</span>
+<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> <span class="st">"Gender"</span>,</span>
+<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">y =</span> <span class="st">"Count"</span></span>
+<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">+</span></span>
+<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a>      <span class="fu">theme_minimal</span>()</span>
+<span id="cb41-23"><a href="#cb41-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-24"><a href="#cb41-24" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (view <span class="sc">==</span> <span class="st">"Income"</span>) {</span>
+<span id="cb41-25"><a href="#cb41-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> income_bracket)) <span class="sc">+</span></span>
+<span id="cb41-26"><a href="#cb41-26" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"#6d86b3"</span>) <span class="sc">+</span></span>
+<span id="cb41-27"><a href="#cb41-27" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(</span>
+<span id="cb41-28"><a href="#cb41-28" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">"Customer Distribution"</span>,</span>
+<span id="cb41-29"><a href="#cb41-29" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> <span class="st">"Income Bracket"</span>,</span>
+<span id="cb41-30"><a href="#cb41-30" aria-hidden="true" tabindex="-1"></a>        <span class="at">y =</span> <span class="st">"Count"</span></span>
+<span id="cb41-31"><a href="#cb41-31" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">+</span></span>
+<span id="cb41-32"><a href="#cb41-32" aria-hidden="true" tabindex="-1"></a>      <span class="fu">theme_minimal</span>()</span>
+<span id="cb41-33"><a href="#cb41-33" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-34"><a href="#cb41-34" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (view <span class="sc">==</span> <span class="st">"Segment"</span>) {</span>
+<span id="cb41-35"><a href="#cb41-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> customer_segment)) <span class="sc">+</span></span>
+<span id="cb41-36"><a href="#cb41-36" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"#6d86b3"</span>) <span class="sc">+</span></span>
+<span id="cb41-37"><a href="#cb41-37" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(</span>
+<span id="cb41-38"><a href="#cb41-38" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">"Customer Distribution"</span>,</span>
+<span id="cb41-39"><a href="#cb41-39" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> <span class="st">"Customer Segment"</span>,</span>
+<span id="cb41-40"><a href="#cb41-40" aria-hidden="true" tabindex="-1"></a>        <span class="at">y =</span> <span class="st">"Count"</span></span>
+<span id="cb41-41"><a href="#cb41-41" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">+</span></span>
+<span id="cb41-42"><a href="#cb41-42" aria-hidden="true" tabindex="-1"></a>      <span class="fu">theme_minimal</span>()</span>
+<span id="cb41-43"><a href="#cb41-43" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb41-44"><a href="#cb41-44" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Key Metrics Functions</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>get_customer_km <span class="ot">&lt;-</span> <span class="cf">function</span>(filtered_data, full_data) {</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">metric =</span> <span class="fu">c</span>(</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Matched Customers"</span>,</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>      <span class="st">"% of Total"</span>,</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Average Age"</span>,</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Avg Products Owned"</span>,</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Top Segment"</span>,</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Top Income"</span></span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">c</span>(</span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">nrow</span>(filtered_data),</span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">percent</span>(<span class="fu">nrow</span>(filtered_data) <span class="sc">/</span> <span class="fu">nrow</span>(full_data), <span class="at">accuracy =</span> <span class="fl">0.1</span>),</span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">round</span>(<span class="fu">mean</span>(filtered_data<span class="sc">$</span>age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">1</span>),</span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">round</span>(<span class="fu">mean</span>(filtered_data<span class="sc">$</span>total_products_5, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">1</span>),</span>
+<span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">names</span>(<span class="fu">sort</span>(<span class="fu">table</span>(filtered_data<span class="sc">$</span>customer_segment), <span class="at">decreasing =</span> <span class="cn">TRUE</span>))[<span class="dv">1</span>],</span>
+<span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a>      <span class="fu">names</span>(<span class="fu">sort</span>(<span class="fu">table</span>(filtered_data<span class="sc">$</span>income_bracket), <span class="at">decreasing =</span> <span class="cn">TRUE</span>))[<span class="dv">1</span>]</span>
+<span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Product ownership profile</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Bar Chart</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>plot_product_bar <span class="ot">&lt;-</span> <span class="cf">function</span>(data) {</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>  prod_df <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">all_of</span>(product_vars), <span class="sc">~</span> <span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_longer</span>(</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">cols =</span> <span class="fu">everything</span>(),</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">names_to =</span> <span class="st">"product"</span>,</span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">values_to =</span> <span class="st">"ownership_rate"</span></span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(prod_df, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(product, ownership_rate), <span class="at">y =</span> ownership_rate)) <span class="sc">+</span></span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"#6d86b3"</span>) <span class="sc">+</span></span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> percent) <span class="sc">+</span></span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"Product Ownership Profile"</span>,</span>
+<span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"Product"</span>,</span>
+<span id="cb43-19"><a href="#cb43-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Ownership Rate"</span></span>
+<span id="cb43-20"><a href="#cb43-20" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb43-21"><a href="#cb43-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span>
+<span id="cb43-22"><a href="#cb43-22" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb43-23"><a href="#cb43-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-24"><a href="#cb43-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Heatmap</span></span>
+<span id="cb43-25"><a href="#cb43-25" aria-hidden="true" tabindex="-1"></a>plot_product_heatmap <span class="ot">&lt;-</span> <span class="cf">function</span>(data, <span class="at">group_var =</span> <span class="st">"customer_segment"</span>) {</span>
+<span id="cb43-26"><a href="#cb43-26" aria-hidden="true" tabindex="-1"></a>  data <span class="sc">%&gt;%</span></span>
+<span id="cb43-27"><a href="#cb43-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="fu">all_of</span>(group_var), <span class="fu">all_of</span>(product_vars)) <span class="sc">%&gt;%</span></span>
+<span id="cb43-28"><a href="#cb43-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_longer</span>(</span>
+<span id="cb43-29"><a href="#cb43-29" aria-hidden="true" tabindex="-1"></a>      <span class="at">cols =</span> <span class="fu">all_of</span>(product_vars),</span>
+<span id="cb43-30"><a href="#cb43-30" aria-hidden="true" tabindex="-1"></a>      <span class="at">names_to =</span> <span class="st">"product"</span>,</span>
+<span id="cb43-31"><a href="#cb43-31" aria-hidden="true" tabindex="-1"></a>      <span class="at">values_to =</span> <span class="st">"has_product"</span></span>
+<span id="cb43-32"><a href="#cb43-32" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb43-33"><a href="#cb43-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(.data[[group_var]], product) <span class="sc">%&gt;%</span></span>
+<span id="cb43-34"><a href="#cb43-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
+<span id="cb43-35"><a href="#cb43-35" aria-hidden="true" tabindex="-1"></a>      <span class="at">ownership_rate =</span> <span class="fu">mean</span>(has_product, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb43-36"><a href="#cb43-36" aria-hidden="true" tabindex="-1"></a>      <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb43-37"><a href="#cb43-37" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb43-38"><a href="#cb43-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> product, <span class="at">y =</span> .data[[group_var]], <span class="at">fill =</span> ownership_rate)) <span class="sc">+</span></span>
+<span id="cb43-39"><a href="#cb43-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_tile</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb43-40"><a href="#cb43-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">percent</span>(ownership_rate, <span class="at">accuracy =</span> <span class="dv">1</span>)), <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb43-41"><a href="#cb43-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">"#eef2fa"</span>, <span class="at">high =</span> <span class="st">"#4f76ba"</span>, <span class="at">labels =</span> percent) <span class="sc">+</span></span>
+<span id="cb43-42"><a href="#cb43-42" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb43-43"><a href="#cb43-43" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"Product Ownership Heatmap"</span>,</span>
+<span id="cb43-44"><a href="#cb43-44" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"Product"</span>,</span>
+<span id="cb43-45"><a href="#cb43-45" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> group_var,</span>
+<span id="cb43-46"><a href="#cb43-46" aria-hidden="true" tabindex="-1"></a>      <span class="at">fill =</span> <span class="st">"Ownership Rate"</span></span>
+<span id="cb43-47"><a href="#cb43-47" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb43-48"><a href="#cb43-48" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span>
+<span id="cb43-49"><a href="#cb43-49" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="tab-2-r-code" class="level3">
+<h3 class="anchored" data-anchor-id="tab-2-r-code">Tab 2 R code</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparison distribution</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>build_comparison_dist <span class="ot">&lt;-</span> <span class="cf">function</span>(data,</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">compare_by =</span> <span class="st">"customer_segment"</span>,</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">against =</span> <span class="st">"income_bracket"</span>,</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">metric =</span> <span class="st">"Product Ownership Rate"</span>,</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">selected_products =</span> product_vars) {</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (metric <span class="sc">==</span> <span class="st">"Customer Count"</span>) {</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>    out <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">count</span>(.data[[compare_by]], .data[[against]], <span class="at">name =</span> <span class="st">"value"</span>)</span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (metric <span class="sc">==</span> <span class="st">"Proportion"</span>) {</span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>    out <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">count</span>(.data[[compare_by]], .data[[against]], <span class="at">name =</span> <span class="st">"n"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">group_by</span>(.data[[compare_by]]) <span class="sc">%&gt;%</span></span>
+<span id="cb44-16"><a href="#cb44-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">mutate</span>(<span class="at">value =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)) <span class="sc">%&gt;%</span></span>
+<span id="cb44-17"><a href="#cb44-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">ungroup</span>()</span>
+<span id="cb44-18"><a href="#cb44-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb44-19"><a href="#cb44-19" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (metric <span class="sc">==</span> <span class="st">"Avg Products Owned"</span>) {</span>
+<span id="cb44-20"><a href="#cb44-20" aria-hidden="true" tabindex="-1"></a>    out <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb44-21"><a href="#cb44-21" aria-hidden="true" tabindex="-1"></a>      <span class="fu">group_by</span>(.data[[compare_by]], .data[[against]]) <span class="sc">%&gt;%</span></span>
+<span id="cb44-22"><a href="#cb44-22" aria-hidden="true" tabindex="-1"></a>      <span class="fu">summarise</span>(</span>
+<span id="cb44-23"><a href="#cb44-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">value =</span> <span class="fu">mean</span>(total_products_5, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb44-24"><a href="#cb44-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb44-25"><a href="#cb44-25" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb44-26"><a href="#cb44-26" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb44-27"><a href="#cb44-27" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (metric <span class="sc">==</span> <span class="st">"Product Ownership Rate"</span>) {</span>
+<span id="cb44-28"><a href="#cb44-28" aria-hidden="true" tabindex="-1"></a>    out <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb44-29"><a href="#cb44-29" aria-hidden="true" tabindex="-1"></a>      <span class="fu">group_by</span>(.data[[compare_by]], .data[[against]]) <span class="sc">%&gt;%</span></span>
+<span id="cb44-30"><a href="#cb44-30" aria-hidden="true" tabindex="-1"></a>      <span class="fu">summarise</span>(</span>
+<span id="cb44-31"><a href="#cb44-31" aria-hidden="true" tabindex="-1"></a>        <span class="at">value =</span> <span class="fu">mean</span>(</span>
+<span id="cb44-32"><a href="#cb44-32" aria-hidden="true" tabindex="-1"></a>          <span class="fu">rowMeans</span>(<span class="fu">across</span>(<span class="fu">all_of</span>(selected_products)), <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb44-33"><a href="#cb44-33" aria-hidden="true" tabindex="-1"></a>          <span class="at">na.rm =</span> <span class="cn">TRUE</span></span>
+<span id="cb44-34"><a href="#cb44-34" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb44-35"><a href="#cb44-35" aria-hidden="true" tabindex="-1"></a>        <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb44-36"><a href="#cb44-36" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb44-37"><a href="#cb44-37" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb44-38"><a href="#cb44-38" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb44-39"><a href="#cb44-39" aria-hidden="true" tabindex="-1"></a>  out</span>
+<span id="cb44-40"><a href="#cb44-40" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparison heatmap</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>plot_comparison_heatmap <span class="ot">&lt;-</span> <span class="cf">function</span>(comparison_df,</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>                                    compare_by,</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>                                    against,</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>                                    metric) {</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(comparison_df, <span class="fu">aes</span>(<span class="at">x =</span> .data[[against]], <span class="at">y =</span> .data[[compare_by]], <span class="at">fill =</span> value)) <span class="sc">+</span></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_tile</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">ifelse</span>(metric <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Proportion"</span>, <span class="st">"Product Ownership Rate"</span>),</span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">percent</span>(value, <span class="at">accuracy =</span> <span class="dv">1</span>),</span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">round</span>(value, <span class="dv">1</span>))),</span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>              <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">"#eef2fa"</span>, <span class="at">high =</span> <span class="st">"#4f76ba"</span>) <span class="sc">+</span></span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"Segment Comparison"</span>,</span>
+<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> against,</span>
+<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> compare_by,</span>
+<span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">fill =</span> metric</span>
+<span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb45-20"><a href="#cb45-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span>
+<span id="cb45-21"><a href="#cb45-21" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparison highlights</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>get_comparison_highlights <span class="ot">&lt;-</span> <span class="cf">function</span>(comparison_df, compare_by, against) {</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>  highest_row <span class="ot">&lt;-</span> comparison_df <span class="sc">%&gt;%</span> <span class="fu">slice_max</span>(value, <span class="at">n =</span> <span class="dv">1</span>, <span class="at">with_ties =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>  lowest_row  <span class="ot">&lt;-</span> comparison_df <span class="sc">%&gt;%</span> <span class="fu">slice_min</span>(value, <span class="at">n =</span> <span class="dv">1</span>, <span class="at">with_ties =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(</span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">insight =</span> <span class="fu">c</span>(<span class="st">"Highest"</span>, <span class="st">"Lowest"</span>, <span class="st">"Largest Gap Observed"</span>),</span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">c</span>(</span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">paste0</span>(highest_row[[compare_by]], <span class="st">" × "</span>, highest_row[[against]], </span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>             <span class="st">" ("</span>, <span class="fu">round</span>(highest_row<span class="sc">$</span>value, <span class="dv">2</span>), <span class="st">")"</span>),</span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">paste0</span>(lowest_row[[compare_by]], <span class="st">" × "</span>, lowest_row[[against]], </span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>             <span class="st">" ("</span>, <span class="fu">round</span>(lowest_row<span class="sc">$</span>value, <span class="dv">2</span>), <span class="st">")"</span>),</span>
+<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">round</span>(<span class="fu">max</span>(comparison_df<span class="sc">$</span>value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">-</span> <span class="fu">min</span>(comparison_df<span class="sc">$</span>value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">2</span>)</span>
+<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb46-17"><a href="#cb46-17" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="tested-output-examples" class="level2">
+<h2 class="anchored" data-anchor-id="tested-output-examples">Tested output examples</h2>
+<section id="tab-1" class="level3">
+<h3 class="anchored" data-anchor-id="tab-1">Tab 1</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>filtered_audience <span class="ot">&lt;-</span> <span class="fu">filter_customers</span>(</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> analysis_data,</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">age_group =</span> <span class="fu">c</span>(<span class="st">"25-34"</span>),</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">gender =</span> <span class="fu">c</span>(<span class="st">"Female"</span>),</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">income_bracket =</span> <span class="fu">c</span>(<span class="st">"Medium"</span>),</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">min_products =</span> <span class="dv">2</span></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_customer_distribution</span>(filtered_audience, <span class="at">view =</span> <span class="st">"Age"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE02_files/figure-html/unnamed-chunk-39-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_customer_km</span>(filtered_audience, analysis_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 2
+  metric             value     
+  &lt;chr&gt;              &lt;chr&gt;     
+1 Matched Customers  37146     
+2 % of Total         76.2%     
+3 Average Age        46.8      
+4 Avg Products Owned 2.9       
+5 Top Segment        occasional
+6 Top Income         Medium    </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_product_bar</span>(filtered_audience)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE02_files/figure-html/unnamed-chunk-39-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_product_heatmap</span>(filtered_audience, <span class="at">group_var =</span> <span class="st">"customer_segment"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE02_files/figure-html/unnamed-chunk-39-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="tab-2" class="level3">
+<h3 class="anchored" data-anchor-id="tab-2">Tab 2</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>comparison_df <span class="ot">&lt;-</span> <span class="fu">build_comparison_dist</span>(</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> analysis_data,</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">compare_by =</span> <span class="st">"customer_segment"</span>,</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">against =</span> <span class="st">"income_bracket"</span>,</span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">metric =</span> <span class="st">"Product Ownership Rate"</span>,</span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">selected_products =</span> product_vars</span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_comparison_heatmap</span>(</span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>  comparison_df,</span>
+<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">compare_by =</span> <span class="st">"customer_segment"</span>,</span>
+<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">against =</span> <span class="st">"income_bracket"</span>,</span>
+<span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">metric =</span> <span class="st">"Product Ownership Rate"</span></span>
+<span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TE02_files/figure-html/unnamed-chunk-40-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_comparison_highlights</span>(</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>  comparison_df,</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">compare_by =</span> <span class="st">"customer_segment"</span>,</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">against =</span> <span class="st">"income_bracket"</span></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  insight              value                        
+  &lt;chr&gt;                &lt;chr&gt;                        
+1 Highest              occasional × Very High (0.74)
+2 Lowest               regular × Low (0.33)         
+3 Largest Gap Observed 0.41                         </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>comparison_df <span class="sc">%&gt;%</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> income_bracket, <span class="at">values_from =</span> value)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 5
+  customer_segment  High   Low Medium `Very High`
+  &lt;fct&gt;            &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;       &lt;dbl&gt;
+1 inactive         0.601 0.335  0.468       0.729
+2 occasional       0.598 0.332  0.469       0.740
+3 power            0.596 0.335  0.462       0.730
+4 regular          0.604 0.331  0.468       0.733</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="ui-design" class="level2">
+<h2 class="anchored" data-anchor-id="ui-design">UI design</h2>
+<p>This prototype supports exploratory understanding of the customer base by surfacing the distribution of segments, churn risk, value contribution, product penetration, and engagement behaviour. It helps users identify the major customer groups, detect imbalance across segments, and spot early signals of value concentration or attrition risk.</p>
+<section id="tab-1-customer-profile-overview" class="level3">
+<h3 class="anchored" data-anchor-id="tab-1-customer-profile-overview">Tab 1: Customer Profile Overview</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="image/jy1.png" class="img-fluid figure-img" width="652"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="input-output-mapping" class="level4">
+<h4 class="anchored" data-anchor-id="input-output-mapping">Input-output mapping</h4>
+<section id="input" class="level5">
+<h5 class="anchored" data-anchor-id="input">Input</h5>
+<ul>
+<li><p>customer_segment</p></li>
+<li><p>income_bracket</p></li>
+<li><p>age_group</p></li>
+<li><p>gender</p></li>
+<li><p>marital_status</p></li>
+<li><p>selected_products</p></li>
+<li><p>min_products</p></li>
+</ul>
+</section>
+<section id="output" class="level5">
+<h5 class="anchored" data-anchor-id="output">Output</h5>
+<ul>
+<li><p>customer distribution chart</p></li>
+<li><p>KPI summary</p></li>
+<li><p>product ownership bar chart</p></li>
+<li><p>product ownership heatmap</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="tab-2-segment-comparison" class="level3">
+<h3 class="anchored" data-anchor-id="tab-2-segment-comparison">Tab 2: Segment Comparison</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="image/jy2.png" class="img-fluid figure-img" width="652"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="input-output-mapping-1" class="level4">
+<h4 class="anchored" data-anchor-id="input-output-mapping-1">Input-output mapping</h4>
+<section id="input-1" class="level5">
+<h5 class="anchored" data-anchor-id="input-1">Input</h5>
+<ul>
+<li><p>compare_by</p></li>
+<li><p>against</p></li>
+<li><p>metric</p></li>
+<li><p>product selection</p></li>
+</ul>
+</section>
+<section id="output-1" class="level5">
+<h5 class="anchored" data-anchor-id="output-1">Output</h5>
+<ul>
+<li><p>comparison heatmap</p></li>
+<li><p>highlights summary</p></li>
+<li><p>comparison summary table</p></li>
+</ul>
 
 
+</section>
+</section>
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

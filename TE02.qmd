@@ -629,19 +629,13 @@ The objective of this prototype module is to translate the customer-level EDA an
 package_summary <- tibble::tibble(
   Package = c(
     "tidyverse",
-    "dplyr",
     "tidyr",
-    "ggplot2",
-    "readr",
     "scales",
     "DT"
   ),
   `Main Function in Prototype` = c(
     "Core package collection for data wrangling and visualisation",
-    "Filtering, grouping, summarising, and deriving analysis outputs",
     "Reshaping data into long/wide format for heatmaps and tables",
-    "Creating bar charts, histograms, and heatmaps",
-    "Importing customer data from csv files",
     "Formatting percentages and large numbers for plots and KPI outputs",
     "Creating interactive summary tables for prototype outputs"
   )
